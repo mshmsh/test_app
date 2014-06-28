@@ -12,5 +12,7 @@ class StaticPagesController < ApplicationController
   	@category = Category.find(params[:id]) 
   	@products = @category.products.sorted
   end 
+  def cart 
+  end 
     	 
 end

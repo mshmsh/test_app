@@ -23,13 +23,13 @@
 
 	<div class="container">
 
-		
-		<%#= render 'layouts/topspace' %>
-    <% if @cart %>
-    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
-      <%= render @cart %>
-    <% end %>
-    <% end %> 
+		<%= render 'layouts/topspace' %>
+		<%#= render 'layouts/topspace_left' %>
+    <%# if @cart %>
+    <%#= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+      <%#= render @cart %>
+    <%# end %>
+    <%# end %>  
     <%= yield %>
 		 <!--  <%#= render 'layouts/featured_topspace' %>
 		  <%#= render 'layouts/recentworks_topspace' %>

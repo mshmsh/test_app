@@ -257,6 +257,7 @@ a:hover {
   background-color: #ffffff;
   color: #000000;
 }
+
 /****************************************************************************************
 
 
@@ -816,5 +817,11 @@ footer.entry-meta .meta-in {
   .container {
     max-width: 1080px;
   }
-  
+  /* customize error messages*/
+.help-block {
+  display: horizontal;
+  margin: 5px;
+  margin-bottom: 5px;
+  color: #737373;
+}
 }

@@ -1,3 +1,4 @@
+$("#notice").hide()
 $('#cart').html("<%= j render(@cart) %>").show 'blind' , 700
 $('#current_item').css('background-color': '#88ff88').animate
   'background-color': "#ffffff"

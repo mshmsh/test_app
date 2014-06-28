@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
+  resources :orders
+
+  resources :customers
+
   resources :line_items
 
   resources :carts
 
   resources :categories
 
-  resources :products
+  resources :products do 
+    get :who_bought, :on => :member
+  end
 
   root 'static_pages#index'
   match 'list', :to => 'static_pages#list', :via => :get
+  match 'cart', :to => 'static_pages#cart', :via => :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

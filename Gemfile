@@ -13,8 +13,13 @@ gem 'therubyracer'  # If using Ruby
 gem 'less-rails-bootstrap'
 gem 'faker'
 gem 'random_data'
+gem "simple_form",  github: 'plataformatec/simple_form' 
+gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon'
+
+
 group :development, :test do
-  
+gem "better_errors"
+gem "binding_of_caller"  
 gem 'spring'
 end
 

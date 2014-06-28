@@ -1,0 +1,36 @@
+<div class="row">
+      <div class="col-sm-6 col-sm-offset-2">
+          <div id = "comments">
+             <div id = "respond">
+<%= simple_form_for @customer, :html => {:class =>'form-horizontal'}  do |f| %>
+        <%#= @customer.errors.full_messages.to_sentence  %>
+        <%= f.input :first_name%>
+        <%= f.input :last_name %>
+        <%= f.input :email %>
+        <%= f.input :pay_type, :collection => [ "Check" , "Credit card" , "Purchase order" ], :prompt => "Choose one" %>
+        <%= f.input :address_1 %>
+        <%= f.input :address_2 %>
+        <%= f.input :birthday , :as => :string %>
+             <%#= f.simple_fields_for :orders, Order.new do |o| %>
+                <%#= o.input :pay_type %>
+            <%# end %>  
+<div class = "row">
+     <div class="col-md-12 text-right">             
+        <button type="submit" class="btn btn-action">Submit</button> 
+       </div>
+</div>
+          </div>
+      </div>
+   </div>
+</div>
+  
+  
+  <!-- <div class="field">
+    <%#= f.label :customer_num %><br>
+    <%#= f.text_field :customer_num %>
+  </div>
+  <div class="actions">
+    <%#= f.submit %>
+  </div> -->
+<% end %>
+
