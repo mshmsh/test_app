@@ -4,7 +4,7 @@ class AddCustomerIdToOrder < ActiveRecord::Migration
   	add_index :orders, "customer_id"
   end 
   def down 
-  	remove_column :orders, :customer_id,  :integer
   	remove_index :orders, "customer_id"
+  	remove_column :orders, :customer_id,  :integer
   end
 end

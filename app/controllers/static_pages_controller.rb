@@ -7,7 +7,6 @@ class StaticPagesController < ApplicationController
   def store 
   end 
   def list
-    sleep 1
     @count = increment_counter
   	@category = Category.find(params[:id]) 
   	@products = @category.products.sorted

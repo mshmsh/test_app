@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
   include CurrentCart
+  before_action :set_customer, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:new, :create]  
 
   # GET /customers
@@ -34,11 +34,12 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     @order = @customer.orders.build
     @order.add_line_items_from_cart(@cart)
-    Cart.destroy(session[:cart_id])
-    session[:cart_id] = nil
-
+      
     respond_to do |format|
       if @customer.save 
+         Cart.destroy(session[:cart_id])
+         session[:cart_id] = nil
+          #Notifier.order_received(@order).deliver
         format.html { redirect_to root_url, notice: 'Thank you for your purchase.' }
         format.json { render :show, status: :created, location: @customer }
       else
