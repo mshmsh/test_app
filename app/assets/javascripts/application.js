@@ -19,5 +19,4 @@
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/transition
 //= require twitter/bootstrap/affix
-//= require cocoon
 //= require_tree .

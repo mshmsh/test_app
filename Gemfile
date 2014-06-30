@@ -13,19 +13,20 @@ gem 'therubyracer'  # If using Ruby
 gem 'less-rails-bootstrap'
 gem 'faker'
 gem 'random_data'
-gem "simple_form",  github: 'plataformatec/simple_form' 
-gem 'cocoon', :git => 'git://github.com/nathanvda/cocoon'
+gem "simple_form",  github: 'plataformatec/simple_form'
+gem 'bcrypt' 
 
 
 group :development, :test do
 gem "better_errors"
 gem "binding_of_caller"  
 gem 'spring'
+gem 'rspec-rails'
 end
 
 group :test do
-  #gem 'selenium-webdriver', '2.35.1'
-  #gem 'capybara', '2.1.0'
+  gem 'selenium-webdriver'
+  gem 'capybara'
 end
 
 group :doc do
