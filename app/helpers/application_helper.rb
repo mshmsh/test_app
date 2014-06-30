@@ -5,4 +5,12 @@ module ApplicationHelper
 		end
 		content_tag("div" , attributes, &block)
 	end
+	def full_title(page_title)
+    base_title = "Spirit Application"
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} / #{page_title}"
+    end
+  end
 end

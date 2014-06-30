@@ -19,24 +19,17 @@
 			<div class="navbar-collapse collapse">
 				
 				<ul class="nav navbar-nav">
-					<li class="dropdown"><%= link_to 'Store <b class="caret"></b>'.html_safe, root_path, :class => "dropdown-toggle", :data => {:toggle => "dropdown"}  %>
+					<li class="navbar-left dropdown"><%= link_to 'Store <b class="caret"></b>'.html_safe, root_path, :class => "dropdown-toggle", :data => {:toggle => "dropdown"}  %>
 						<ul class="dropdown-menu">
 								<% @categories.each do |category| %>
 								<li><%= link_to "#{category.name}",:controller => 'static_pages',:action => 'list', :id => category.id, :class => "caret" %></li>
 								<% end %>
 						</ul>
 					</li>
-					<li><a href="about.html">About</a></li>
-
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li><a href="sidebar-right.html">Right Sidebar</a></li>
-							<li><a href="single.html">Blog Post</a></li>
-						</ul>
-					</li>
-					<li><a href="blog.html">Blog</a></li>
+					<li class = "navbar-left"><%= link_to 'About' %></li>
+					<li class = "navbar-left"><%= link_to 'Blog' %></li>
+					<li class = "navbar-left"><%= link_to 'Sign Up', signup_path %></li>
+					<li class = "navbar-left"><%= link_to 'Log In' %></li>
 					<li class = "navbar-right dropdown">
 							<% if @cart && @cart.line_items.count > 0 %>
 					    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;
@@ -49,7 +42,7 @@
 							<li><%= link_to 'Empty Cart', @cart, :method => :delete %> </li>
 							<li><%= link_to_unless_current 'Checkout', new_customer_path, :method=> :get %></li>
 						</ul><% end %></li>
-			          					
+					</ul>			          					
 			</div><!--/.nav-collapse -->			
 		</div>	
 	</nav>

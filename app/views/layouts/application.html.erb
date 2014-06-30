@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Spirit</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag  'application',"http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700","http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -35,13 +35,15 @@
 		  <%#= render 'layouts/recentworks_topspace' %>
 		  <%#= render 'layouts/section_topspace' %>
 		  <%#= render 'layouts/clients_topspace' %> -->
-
-
+      
+      
 	</div>	<!-- /container -->
 
 </main>
         <%= render 'layouts/footer' %>
         <%= render 'layouts/underfooter' %>
+      <!-- Debuging  -->
+      <%= debug(params) if Rails.env.development? %>
 
 
 </body>
