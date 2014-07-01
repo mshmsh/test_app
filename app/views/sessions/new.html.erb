@@ -1,16 +1,14 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Sign in') %>
 <div class="row">
       <div class="col-sm-6 col-sm-offset-2">
           <div id = "comments">
              <div id = "respond">
-<%= simple_form_for @user, :html => {:class =>'form-horizontal'}  do |f| %>
-        <%= f.input :name%>
+<%= simple_form_for :session, :url => sessions_path, :html => {:class =>'form-horizontal'}  do |f| %>
         <%= f.input :email %>
         <%= f.input :password %>
-        <%= f.input :password_confirmation %>
 <div class = "row">
      <div class="col-md-12 text-right">             
-        <button type="submit" class="btn btn-action">Sign Up</button> 
+        <button type="submit" class="btn btn-action">Sign in</button> 
        </div>
 </div>
           </div>
@@ -18,3 +16,4 @@
    </div>
 </div>
 <% end %>
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>

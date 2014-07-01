@@ -15,10 +15,14 @@ Rails.application.routes.draw do
   end
   resources :users
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   root 'static_pages#index'
-  match 'list', :to => 'static_pages#list', :via => :get
-  match 'cart', :to => 'static_pages#cart', :via => :get
+  match '/list', :to => 'static_pages#list', :via => :get
+  match '/cart', :to => 'static_pages#cart', :via => :get
   match '/signup',  :to => 'users#new',     :via => :get
+  match '/signin', :to => 'sessions#new',    :via => :get
+  match '/signout', :to => 'sessions#destroy', :via => :delete
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

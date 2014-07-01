@@ -29,7 +29,25 @@
 					<li class = "navbar-left"><%= link_to 'About' %></li>
 					<li class = "navbar-left"><%= link_to 'Blog' %></li>
 					<li class = "navbar-left"><%= link_to 'Sign Up', signup_path %></li>
-					<li class = "navbar-left"><%= link_to 'Log In' %></li>
+						<% if signed_in? %>
+		            <li class = "navbar-left"><%= link_to "Users", '#' %></li>
+		            <li class="navbar-left dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		                Account <b class="caret"></b>
+		              </a>
+		              <ul class="dropdown-menu">
+		                <li><%= link_to "Profile", current_user %></li>
+		                <li><%= link_to "Settings", '#' %></li>
+		                <li class="divider"></li>
+		                <li>
+		                  <%= link_to "Sign out", signout_path, method: "delete" %>
+		                </li>
+		              </ul>
+		            </li>
+			          <% else %>
+					<li class = "navbar-left"><%= link_to 'Log In', signin_path %></li>
+			          <% end %>
+
 					<li class = "navbar-right dropdown">
 							<% if @cart && @cart.line_items.count > 0 %>
 					    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;
