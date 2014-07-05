@@ -20,3 +20,12 @@ product = Product.create(
 	      :category_id => Random.number(1..6),
 	      :image_url => r.sample)
 end
+# Users 
+User.delete_all
+user = User.create(
+	:name => "example",
+	:email => "example@example.com",
+	:password => "foobar",
+	:password_confirmation => "foobar",
+	:admin => true
+	)
