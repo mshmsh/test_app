@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:index, :show, :new, :edit]
+  before_action :admin_user,     only: [:index, :show, :new, :edit, :create, :destroy]
+
+
 
   # GET /products
   # GET /products.json
@@ -80,4 +84,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :price, :description, :image_url)
     end
+       
+
 end

@@ -1,7 +1,11 @@
 class CustomersController < ApplicationController
   include CurrentCart
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  before_action :set_cart, only: [:new, :create]  
+  before_action :set_cart, only: [:new, :create]
+  before_action :signed_in_user, only: [:index, :show, :edit]
+  before_action :admin_user , only: [:index, :show, :edit]
+ 
+ 
 
   # GET /customers
   # GET /customers.json
@@ -17,7 +21,8 @@ class CustomersController < ApplicationController
   # GET /customers/new
   def new
     if @cart.line_items.empty? 
-        redirect_to root_url, :notice => "Your cart is empty"
+        redirect_to root_url
+        flash[:danger] = "Your cart is empty"
       return
     end
     @customer = Customer.new
@@ -40,7 +45,8 @@ class CustomersController < ApplicationController
          Cart.destroy(session[:cart_id])
          session[:cart_id] = nil
           #Notifier.order_received(@order).deliver
-        format.html { redirect_to root_url, notice: 'Thank you for your purchase.' }
+        format.html { redirect_to root_url
+          flash[:info] = 'Thank you for your purchase.' }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new  }
@@ -54,7 +60,8 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
+        format.html { redirect_to @customer
+        flash[:info] =  'Customer was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit }
@@ -68,7 +75,8 @@ class CustomersController < ApplicationController
   def destroy
     @customer.destroy
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
+      format.html { redirect_to customers_url
+      flash[:danger] =  'Customer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

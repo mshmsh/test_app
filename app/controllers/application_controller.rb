@@ -16,4 +16,17 @@ class ApplicationController < ActionController::Base
       		   session[:counter] += 1 
       		end 
       end 
-end
+      def signed_in_user
+
+      unless signed_in? 
+        store_location
+        redirect_to signin_url
+        flash[:warning] = "Please sign in."
+      end
+     
+    end
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+      
+   end
