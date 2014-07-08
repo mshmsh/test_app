@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:new, :create]
   before_action :signed_in_user, only: [:index, :show, :edit]
-  before_action :admin_user , only: [:index, :show, :edit]
+  before_action :admin_user , only: [:index, :show, :edit, :destroy]
  
  
 
@@ -61,7 +61,7 @@ class CustomersController < ApplicationController
     respond_to do |format|
       if @customer.update(customer_params)
         format.html { redirect_to @customer
-        flash[:info] =  'Customer was successfully updated.' }
+        flash[:success] =  'Customer was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit }

@@ -39,7 +39,7 @@ describe "User pages" do
 
         it { should have_link('Sign out') }
         it { should have_title(user.name) }
-        it { should have_selector('div.alert.alert-info', text: 'Welcome') }
+        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
       before do
         fill_in "Name",         with: "Example User"

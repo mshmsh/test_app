@@ -1,10 +1,19 @@
-<h3>App Spirit Order Confirmation</h3>
+<h3>Spirit Application Order Confirmation</h3>
 <h3>Dear <%= "#{@order.customer.first_name} #{@order.customer.last_name}" %></h3>
 <p>
-Thank you for your recent order from The App Store.
+Thank you for your recent order from The Spirit Application Store.
 </p>
-<table>
-<tr><th colspan="2" >Qty</th><th>Description</th></tr>
-<%= render @order.line_items %>
+<table class = "table">
+	<thead>
+		<tr>
+			<th>Quantity</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<%= render @order.line_items %>
+		</tr>
+	</tbody>
 </table>
 <p>We'll send you a separate e-mail when your order ships.</p>

@@ -15,14 +15,21 @@
 
 						<span class="title"><%= product.title %></span>
 					</span>
-					<span class="details"><%= link_to 'Add to Cart' ,line_items_path(:product_id => product), :method => :post, :remote => true %> | <a href="">Wordpress</a> | <a href="">Logotype</a></span>
+					<span class="details"><%= link_to 'Add to Cart' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span> 
 					<h4></h4>
 					<p></p>
 				</div>
-				<% end %>
-			</div>
+			<% end %>
 		</div>
-<%= debug (pluralize @count, 'time') %>
+</div>
+		<div class="apple_pagination">
+     <div class="page_info"> 
+      <%= page_entries_info @products %>
+    </div>
+    <%= will_paginate @products, :container => false %>
+  </div>	
+  <br>
+<%#= debug (pluralize @count, 'time') %>
 <script type="text/javascript">
 	$(function() {
 
