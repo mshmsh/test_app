@@ -1,19 +1,34 @@
 <% provide(:title, 'Sign in') %>
-<div class="row">
-      <div class="col-sm-6 col-sm-offset-2">
-          <div id = "comments">
-             <div id = "respond">
-<%= simple_form_for :session, :url => sessions_path, :html => {:class =>'form-horizontal'}  do |f| %>
-        <%= f.input :email %>
-        <%= f.input :password %>
-<div class = "row">
-     <div class="col-md-12 text-right">             
-        <button type="submit" class="btn btn-action">Sign in</button> 
-       </div>
-</div>
+<h2 class="section-title"><span><%= "Login" %> </span></h2>
+<!-- container -->
+  <div class="container">
+    <div class="row">
+      
+      <!-- Article main content -->
+      <article class="col-xs-12 maincontent">
+         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-body">
+               <h3 class="thin text-center">Log in to your account</h3> 
+              <p class="text-center text-muted"> <%= link_to 'Sign up', signup_path %> If you have not registered yet please. </p>
+
+              <!-- <form> -->
+             <%= simple_form_for :session, :url => sessions_path, :html => {:class =>'form-horizontal'}  do |f| %>
+                 <%= f.input :email%>                
+                 <%= f.input :password %>
+
+
+                  
+                  <div class="col-lg-14 text-right">
+                    <button class="btn btn-action" type="submit">Login</button>
+                  </div>
+              <!-- </form> -->
+              <% end %>
+            </div>
           </div>
-      </div>
-   </div>
-</div>
-<% end %>
-<br>
+        </div>        
+      </article>
+      <!-- /Article -->
+    </div>
+  </div>  <!-- /container -->  
+

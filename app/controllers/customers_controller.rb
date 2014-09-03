@@ -37,8 +37,11 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-    @order = @customer.orders.build
+    #@order = @customer.orders.build
+    @order = Order.new 
     @order.add_line_items_from_cart(@cart)
+    @customer.orders << @order
+
       
     respond_to do |format|
       if @customer.save 

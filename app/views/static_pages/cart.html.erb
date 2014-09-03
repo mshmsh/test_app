@@ -1,5 +1,8 @@
+<h2 class="section-title"><span><%= "Cart" %> </span></h2>
 <% if @cart %>
+
     <%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
-      <%= render @cart %>
+       <%= render @cart %>
+
     <% end %>
 <%end %>

@@ -9,7 +9,7 @@ class Product < ActiveRecord::Base
 	validates :image_url, :allow_blank => true, 
 	:format => {:with => %r{\.(gif|jpg|png)}i, :message => 'must be a URL for GIF, JPG or PNG image'}
 	scope :sorted, lambda { order("products.title ASC") }
-
+	scope :best_sell, lambda { where('price < ?' , 10.00) }
 
 	# ensure that there are no line items referencing this product
 	def ensure_not_referenced_by_any_line_item
@@ -21,4 +21,4 @@ class Product < ActiveRecord::Base
 			end
 		end
 
-end # class 
+	end # class 
