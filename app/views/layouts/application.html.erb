@@ -3,7 +3,6 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag  'application',"http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700","http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css","http://fonts.googleapis.com/css?family=Open+Sans:300,400,700", media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   
   </head>
@@ -46,5 +45,6 @@
       <%= debug(params) if Rails.env.development? %>
 
 
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
