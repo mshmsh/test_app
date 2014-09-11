@@ -157,7 +157,10 @@ a:hover {
   #head .lead { font-size: 34px; }
 }
 .slideUp { top:-100px; }
-.headroom { -webkit-transition: all 0.4s ease-out; -moz-transition: all 0.4s ease-out; -o-transition: all 0.4s ease-out; transition: all 0.4s ease-out; }
+.headroom { -webkit-transition: all 0.4s ease-out;
+            -moz-transition: all 0.4s ease-out;
+            -o-transition: all 0.4s ease-out; 
+            transition: all 0.4s ease-out; }
 
 /*********************************************************************
  
@@ -442,7 +445,7 @@ img {
   background-color: rgba(255, 255, 255, 0.6);
   /* Add some stuff */
   text-align: left;
-  padding: 5px 15px;
+  padding: 10px 15px 10px 15px;
   /* End */
   -webkit-transition-property: all;
   -moz-transition-property: all;

@@ -17,6 +17,7 @@ gem 'random_data'
 gem "simple_form",  github: 'plataformatec/simple_form'
 gem 'bcrypt' 
 gem 'will_paginate'
+gem 'jquery-turbolinks'
 
 
 group :development, :test do
