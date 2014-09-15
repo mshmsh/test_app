@@ -3,20 +3,20 @@ require 'rails_helper'
 describe "User pages" do
 
   subject { page }
-  
+
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
 
-    #it { should have_content(user.name) }
+    it { should have_content(user.name) }
     it { should have_title(full_title(user.name)) }
   end
 
   describe "signup page" do
     before { visit signup_path }
 
-    #it { should have_content('Sign up') }
+    it { should have_content('Sign up') }
     it { should have_title(full_title('Sign up')) }
   end
 
@@ -24,7 +24,7 @@ describe "User pages" do
 
     before { visit signup_path }
 
-    let(:submit) { "Sign Up" }
+    let(:submit) { "Sign in" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -48,10 +48,10 @@ describe "User pages" do
         fill_in "Password confirmation", with: "foobar"
 
         end
-       
+
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
-      end      
+      end
     end
     describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
@@ -65,6 +65,7 @@ describe "User pages" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
+        sign_in user
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password

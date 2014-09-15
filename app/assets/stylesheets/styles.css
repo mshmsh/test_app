@@ -7,13 +7,13 @@ body {
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   color: #666666;
   /*padding: 0;*/
-  padding-top: 70px; 
+  padding-top: 70px;
 }
 .topspace {
   margin-top: 40px;
 }
 /*********************************************************************
- 
+
 
                                 TYPOGRAPHY
 
@@ -97,7 +97,7 @@ a:hover {
 }
 
 /*********************************************************************
- 
+
 
                                 HEADER
 
@@ -159,11 +159,11 @@ a:hover {
 .slideUp { top:-100px; }
 .headroom { -webkit-transition: all 0.4s ease-out;
             -moz-transition: all 0.4s ease-out;
-            -o-transition: all 0.4s ease-out; 
+            -o-transition: all 0.4s ease-out;
             transition: all 0.4s ease-out; }
 
 /*********************************************************************
- 
+
 
                             NAVBAR (in header)
 
@@ -287,7 +287,7 @@ a:hover {
   color: #bd1550;
 }
 /*********************************************************************
- 
+
 
                                 CONTENT
 
@@ -485,7 +485,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  
+
 }
 .thumbnail:hover {
   color: #333;
@@ -518,7 +518,7 @@ img {
   background: none;
 }
 /*********************************************************************
- 
+
 
                                  BLOG
 
@@ -674,7 +674,7 @@ footer.entry-meta .meta-in {
   margin-bottom: 30px;
 }
 /*********************************************************************
- 
+
 
                                 COMMENTS
 
@@ -770,7 +770,7 @@ footer.entry-meta .meta-in {
   margin: 55px 0 0 0;
 }
 /*********************************************************************
- 
+
 
                                 FOOTER
 
@@ -856,6 +856,80 @@ footer.entry-meta .meta-in {
   .apple_pagination a {
     text-decoration: none;
     color: black; }
-    .apple_pagination a:hover, .apple_pagination a:focus {
+  .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
 
+
+   .artGroup {
+  display:block;
+  width:300px;
+  height:182px;
+  position:relative;
+  margin-bottom:30px;
+  margin-right:20px;
+  float:right;
+
+}
+.artwork {
+  display:block;
+  width:100%;
+  height:100%;
+}
+.artGroup img {
+  width:100%;
+  height:100%;
+  position:absolute;
+  display:block;
+}
+.artGroup .detail {
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  background:#fff;
+}
+.artGroup .detail p {
+  font-size: 12px;
+  text-align: left;
+}
+/*  Without CSS3 */
+.artGroup.slide {
+  overflow: hidden;
+}
+.artGroup.slide .detail {
+  bottom:-364px;
+}
+/*  CSS3 Flip */
+.artGroup.flip {
+  -webkit-perspective:800px;
+  -moz-perspective:800px;
+  -ms-perspective:800px;
+  -o-perspective:800px;
+  perspective:800px;
+}
+.artGroup.flip .artwork {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.artGroup.flip .detail, .artGroup.flip .theFlip {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.artGroup.flip img, .artGroup.flip .detail {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

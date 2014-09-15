@@ -1,23 +1,20 @@
 <div class="row section recentworks topspace">
 
-			<h2 class="section-title"><span><%= "{Best}" %> </span></h2>
+	<h2 class="section-title"><span><%= "{Simple Search}" %> </span></h2>
 
-			<div class="thumbnails recentworks row">
+		<div class="recentworks row">
 			    <% @products.each do |product| %>
-				
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<span class="thumbnail">
-						<span class="img">
-						    <%= image_tag(product.image_url) %>
-						    <span class = "cover"><p><%= sanitize product.description %></p></span>
-							<span class="cover"><span class="more"><%= number_to_currency(product.price) %></span></span>
-						</span>
 
-						<span class="title"><%= product.title %></span>
-					</span>
-					<span class="details"><%= link_to 'Add to Cart' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span> 
-					<h4></h4>
-					<p></p>
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+					<span class=" artGroup slide">
+					<span class="artwork">
+					<%= image_tag(product.image_url) %>
+					<span class = "detail"><p>
+                            <span><b><%= product.title %></b></span></br>
+                            <%= sanitize product.description %>  </br>
+                            <span><b><%= number_to_currency(product.price) %> </b></span></br>
+                            <%= link_to 'Add to Cart' ,line_items_path(:product_id => product), :method => :post, :remote => true %>
+                            </span>
 				</div>
 			<% end %>
 		</div>
