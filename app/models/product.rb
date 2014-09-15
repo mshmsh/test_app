@@ -11,6 +11,7 @@ class Product < ActiveRecord::Base
 	scope :sorted, lambda { order("products.title ASC") }
 	scope :best_sell, lambda { where('price < ?' , 10.00) }
 
+
 	# ensure that there are no line items referencing this product
 	def ensure_not_referenced_by_any_line_item
 		if line_items.count.zero?

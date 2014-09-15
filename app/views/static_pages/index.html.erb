@@ -1,21 +1,22 @@
 <div class="row section recentworks topspace">
+    <h2 class="section-title"><span> Simple Search </span></h2>
+        <div class=" thumbnails recentworks row">
+                <% @products.each do |product| %>
 
-	<h2 class="section-title"><span><%= "{Simple Search}" %> </span></h2>
-
-		<div class="recentworks row">
-			    <% @products.each do |product| %>
-
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-					<span class=" artGroup slide">
-					<span class="artwork">
-					<%= image_tag(product.image_url) %>
-					<span class = "detail"><p>
-                            <span><b><%= product.title %></b></span></br>
-                            <%= sanitize product.description %>  </br>
-                            <span><b><%= number_to_currency(product.price) %> </b></span></br>
-                            <%= link_to 'Add to Cart' ,line_items_path(:product_id => product), :method => :post, :remote => true %>
-                            </span>
-				</div>
-			<% end %>
-		</div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <span class=" artGroup slide ">
+                        <span class="artwork">
+                        <%= image_tag(product.image_url, :class => "img-thumbnail") %>
+                        <span class = "detail"><p>
+                                       <span><b><%= product.title %></b></span></br>
+                                       <%= sanitize product.description %>  </br>
+                                       <span><b><%= number_to_currency(product.price) %> </b></span></br>
+                                       <%= link_to 'Add to Cart' ,line_items_path(:product_id => product), :method => :post, :remote => true %></p>
+                                       </span>
+                                       </span>
+                                 </span>
+                                       <span class="details"><b><%= product.title %></b></span>
+                                    </div>
+                <% end %>
+              </div>
 </div>

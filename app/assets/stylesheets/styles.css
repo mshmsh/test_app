@@ -406,6 +406,8 @@ img {
   text-align: center;
   font-size: 12px;
   font-size: 0.75rem;
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 .thumbnail {
   display: block;
@@ -865,7 +867,7 @@ footer.entry-meta .meta-in {
   width:300px;
   height:182px;
   position:relative;
-  margin-bottom:30px;
+  margin-bottom:20px;
   margin-right:20px;
   float:right;
 
