@@ -24,6 +24,6 @@ test:
   <<: *default
   database: spirit_test
 
-# production:
-#   <<: *default
-#   database: 
+production:
+  <<: *default
+  database: spirit_production

@@ -29,5 +29,5 @@ class Product < ActiveRecord::Base
 		end
 	end
 
-	end # class
+	end
 
