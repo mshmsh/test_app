@@ -20,6 +20,14 @@ class Product < ActiveRecord::Base
 			errors.add(:base, 'Line Items present' )
 			return false
 			end
+	end
+	def self.search(search)
+		if search
+                                 where("title ilike ?", "%#{search}%")
+		else
+			Product.all
 		end
+	end
 
 	end # class
+
