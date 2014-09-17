@@ -403,11 +403,12 @@ img {
 }
 .thumbnails .details {
   display: block;
-  text-align: center;
+  text-align: left;
   font-size: 12px;
   font-size: 0.75rem;
   margin-top: 0px;
   margin-bottom: 50px;
+  margin-left: 52px;
 }
 .thumbnail {
   display: block;
@@ -864,7 +865,7 @@ footer.entry-meta .meta-in {
 
    .artGroup {
   display:block;
-  width:300px;
+  width:212px;
   height:182px;
   position:relative;
   margin-bottom:20px;
@@ -893,6 +894,7 @@ footer.entry-meta .meta-in {
 .artGroup .detail p {
   font-size: 12px;
   text-align: left;
+  padding: 5px 5px;
 }
 /*  Without CSS3 */
 .artGroup.slide {

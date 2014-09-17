@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
   def index
   	     # There is a scope under the name of best_sell in product model
          @products = Product.search(params[:search]).paginate(page: params[:page], :per_page => 12)
+
+
   end
   def store
 

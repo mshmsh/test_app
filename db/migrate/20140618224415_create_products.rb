@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration
       t.timestamps
     end
   end
-  def down 
-  	drop_table :products 
-  end 
+  def down
+  	drop_table :products
+  end
 end

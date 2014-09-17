@@ -10,12 +10,14 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :products do 
+  resources :products do
     get :who_bought, :on => :member
   end
   resources :users
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :searches
 
   root 'static_pages#index'
   match '/list', :to => 'static_pages#list', :via => :get
@@ -24,8 +26,8 @@ Rails.application.routes.draw do
   match '/signin', :to => 'sessions#new',    :via => :get
   match '/signout', :to => 'sessions#destroy', :via => :delete
   match '/edit',  :to => 'users#edit',     :via => :get
-  match '/blog', :to => 'static_pages#blog', :via => :get 
-  match '/about', :to => 'static_pages#about', :via => :get 
+  match '/blog', :to => 'static_pages#blog', :via => :get
+  match '/about', :to => 'static_pages#about', :via => :get
 
 
   # The priority is based upon order of creation: first created -> highest priority.

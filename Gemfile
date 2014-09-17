@@ -15,14 +15,15 @@ gem 'less-rails-bootstrap'
 gem 'faker'
 gem 'random_data'
 gem "simple_form",  github: 'plataformatec/simple_form'
-gem 'bcrypt' 
+gem 'bcrypt'
 gem 'will_paginate'
 gem 'jquery-turbolinks'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 
 group :development, :test do
 gem "better_errors"
-gem "binding_of_caller"  
+gem "binding_of_caller"
 gem 'spring'
 gem 'rspec-rails'
 end
@@ -40,4 +41,4 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
-end 
+end

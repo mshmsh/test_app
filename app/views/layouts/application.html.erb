@@ -24,20 +24,20 @@
 
 	<div class="container">
 
-		<%#= render 'layouts/topspace' %> <!-- Search engine comes here -->
-             <%= render 'layouts/search_form' %>
-		<%#= render 'layouts/topspace_left' %>
-    <%# if @cart %>
-    <%#= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
-      <%#= render @cart %>
-    <%#end %>
-    <%# end %>
-    <%= yield %>
-		 <!--  <%#= render 'layouts/featured_topspace' %>
-		  <%#= render 'layouts/recentworks_topspace' %>
-		  <%#= render 'layouts/section_topspace' %>
-		  <%#= render 'layouts/clients_topspace' %> -->
-
+  		 <%#= render 'layouts/topspace' %> <!-- Search engine comes here -->
+              <%= render 'layouts/search_form' %>
+  		 <%#= render 'layouts/topspace_left' %>
+              <%# if @cart %>
+              <%#= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+              <%#= render @cart %>
+              <%#end %>
+              <%# end %>
+              <%= yield %>
+              <!--   <%#= render 'layouts/featured_topspace' %>
+                   <%#= render 'layouts/recentworks_topspace' %>
+                   <%#= render 'layouts/section_topspace' %>
+                   <%#= render 'layouts/clients_topspace' %>
+               -->
 
 	</div>	<!-- /container -->
 
