@@ -1,5 +1,6 @@
   <!-- container -->
-  <h2 class="section-title"><span><%= "Registration" %> </span></h2>
+  <div class="col-xs-8">
+  <h2 class="section-title"><span><%#= "Registration" %> </span></h2>
   <div class="container">
      <div class="row">
       <!-- Article main content -->
@@ -13,8 +14,8 @@
 
               <!-- <form> -->
               <%= simple_form_for @user, :html => {:class =>'form-horizontal'}  do |f| %>
-                 <%= f.input :name%>
-                 <%= f.input :email%>                
+                   <%= f.input :name%>
+                 <%= f.input :email%>
                  <%= f.input :password %>
                  <%= f.input :password_confirmation %>
 
@@ -22,9 +23,9 @@
 
                   <div class="col-lg-8">
                     <label class="checkbox">
-                      <input type="checkbox"> 
+                      <input type="checkbox">
                       I've read the <a href="page_terms.html">Terms and Conditions</a>
-                    </label>                        
+                    </label>
                   </div>
                   <div class="col-lg-4 text-right">
                     <button class="btn btn-action" type="submit">Register</button>
@@ -33,8 +34,9 @@
               <% end %>
             </div>
           </div>
-        </div>        
+        </div>
       </article>
       <!-- /Article -->
     </div>
-  </div>  <!-- /container -->  
+  </div>  <!-- /container -->
+  </div>

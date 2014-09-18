@@ -8,6 +8,7 @@ body {
   color: #666666;
   padding: 0;
   padding-top: 70px;
+  background-color: #f0f0f0
 
 }
 .topspace {
@@ -360,7 +361,7 @@ img {
   font-size: 11px;
   line-height: 1.33;
   font-weight: normal;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .panel-cta {
   box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
