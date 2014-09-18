@@ -1,35 +1,30 @@
 <div class="row topspace">
 <!-- Sidebar -->
-    <aside class="col-md-2 sidebar sidebar-left">
+    <aside class="col-xs-2 sidebar sidebar-left">
         <div class="row widget">
         <div class="col-xs-12">
 <!-- <h4>Simple Search</h4> -->
             <p><%= form_tag root_path, :method => 'get' do %>
-                    <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Simple Search By Title" %>
+                    <%= text_field_tag :search, params[:search], :class => "form-control input-sm", :placeholder => "Simple Search By Title"  %>
+                    <span class = "help-block">Press Enter to perform a search</span>
                     <%end %>
             </p>
         </div>
         </div>
-       <!--  <div class="row widget">
-       <div class="col-xs-12">
-       <h4>Lorem ipsum dolor sit</h4>       <p><%#= link_to 'Advance search' , new_search_path , :class => "btn btn-action"%></p>
-       </div>
-       </div> -->
-
 <%= form_for  Search.new do |f|  %>
     <div class="row widget">
       <div class="col-xs-12">
-      <p><%= f.text_field :keywords, :class => "form-control", :placeholder => "Adv&Search By Keywords" %> </p>
+      <p><%= f.text_field :keywords, :class => "form-control input-sm",:placeholder => "Advanced Search By Keywords" %> </p>
   </div>
 </div>
 <div class="row widget">
       <div class="col-xs-12">
-      <p><%= f.text_field :max_price, :class => "form-control", :placeholder => "Adv&Search By Max Price" %> </p>
+      <p><%= f.text_field :max_price, :class => "form-control input-sm", :placeholder => "Advanced Search By Max Price" %> </p>
   </div>
 </div>
 <div class="row widget">
       <div class="col-xs-12">
-      <p><%= f.text_field :min_price, :class => "form-control", :placeholder => "Adv&Search By Min Price" %> </p>
+      <p><%= f.text_field :min_price, :class => "form-control input-sm", :placeholder => "Advanced Search By Min Price" %> </p>
   </div>
 </div>
 <div class="row widget">

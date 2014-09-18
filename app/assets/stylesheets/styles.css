@@ -349,16 +349,17 @@ img {
 }
 .btn-lg {
   padding: 15px 60px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.33;
   font-weight: bold;
+  text-transform: uppercase;
 }
 /* Added some stuff */
 .btn-sm {
-  padding: 7px 30px;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: bold ;
+  padding: 9px 30px;
+  font-size: 11px;
+  line-height: 1.33;
+  font-weight: normal;
   text-transform: capitalize;
 }
 .panel-cta {
@@ -938,4 +939,9 @@ footer.entry-meta .meta-in {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+/* I am adding some stuff */
+.widget span {
+  font-family: "Open sans";
+  font-size:12px;
 }

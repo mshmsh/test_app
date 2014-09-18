@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
   def list
         @count = increment_counter
   	  @category = Category.find(params[:id])
-  	  @products = @category.products.paginate(page: params[:page], :per_page => 6)
+  	  @products = @category.products.paginate(page: params[:page], :per_page => 9)
     respond_to do |format|
         format.html
         format.xml { render :xml => @product.to_xml }
