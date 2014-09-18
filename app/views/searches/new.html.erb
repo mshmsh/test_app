@@ -1,6 +1,6 @@
       <!-- Article main content -->
       <article class="col-sm-9 thumbnails ">
-          <h2 class="section-title"><%#= Product.search(params[:search]).size = Product.all.size ? "All Products" : "#{Product.search(params[:search]).size} products" %></h2>
+          <h2 class="section-title"><%= Product.search(params[:search]).size == Product.all.size ? "All Products" : "#{Product.search(params[:search]).size} products" %></h2>
          <% @products.each do |product| %>
              <div class="col-xs-9 col-sm-6 col-md-4 col-lg-4 ">
                     <span class=" artGroup slide ">
@@ -14,21 +14,20 @@
                                        </span>
                                        </span>
                                  </span>
-                                       <span class="details"><b><%= product.title %></b></span>
+                                       <span class="detail"><b><%= product.title %></b></span>
                                     </div>
                 <% end %>
 
+
       </article>
+      </div>
       <!-- /Article -->
-      <!-- <div class="apple_pagination">
+      <div class="apple_pagination">
              <div class="page_info">
-             <%#= page_entries_info @products %>
+             <%= page_entries_info @products %>
        </div>
-       <%#= will_paginate @products, :container => false %>
-</div>
-<br>
- -->
-</div>
+       <%= will_paginate @products, :container => false %>
+      </div>
 
 
 

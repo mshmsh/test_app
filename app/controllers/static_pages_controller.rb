@@ -3,10 +3,9 @@ class StaticPagesController < ApplicationController
   before_action :set_cart
   def index
   	     # There is a scope under the name of best_sell in product model
-         @products = Product.search(params[:search]).paginate(page: params[:page], :per_page => 12)
-
-
+          @products = Product.search(params[:search]).paginate(page: params[:page], :per_page => 9)
   end
+
   def store
 
   end

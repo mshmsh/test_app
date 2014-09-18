@@ -6,8 +6,9 @@ body {
   font-size: 0.9375rem;
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   color: #666666;
-  /*padding: 0;*/
+  padding: 0;
   padding-top: 70px;
+
 }
 .topspace {
   margin-top: 40px;
@@ -354,10 +355,11 @@ img {
 }
 /* Added some stuff */
 .btn-sm {
-  padding: 7px 20px;
+  padding: 7px 30px;
   font-size: 10px;
   line-height: 1;
-  font-weight: bold;
+  font-weight: bold ;
+  text-transform: capitalize;
 }
 .panel-cta {
   box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
@@ -408,7 +410,7 @@ img {
   font-size: 0.75rem;
   margin-top: 0px;
   margin-bottom: 50px;
-  margin-left: 52px;
+  margin-left: 100px;
 }
 .thumbnail {
   display: block;
@@ -865,7 +867,7 @@ footer.entry-meta .meta-in {
 
    .artGroup {
   display:block;
-  width:212px;
+  width:242px;
   height:182px;
   position:relative;
   margin-bottom:20px;

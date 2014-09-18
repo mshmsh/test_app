@@ -23,12 +23,8 @@ class Product < ActiveRecord::Base
 	end
 
 
-def self.search(search)
-		if search
-                                 where("title ilike ?", "%#{search}%")
-		else
-			Product.all
-		end
+	def self.search(search)
+	        where("title ilike ?", "%#{search}%")
 	end
 
 end
