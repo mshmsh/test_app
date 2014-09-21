@@ -1,5 +1,5 @@
 <article class="col-sm-9">
-<h2 class="section-title"><span><%= "Cart" %> </span></h2>
+<h2 class="section-title"><span><%#= "Cart" %> </span></h2>
 <% if @cart %>
 
     <%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>

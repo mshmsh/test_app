@@ -1,42 +1,23 @@
-  <!-- container -->
-  <div class="col-xs-8">
-  <h2 class="section-title"><span><%#= "Registration" %> </span></h2>
-  <div class="container">
-     <div class="row">
-      <!-- Article main content -->
-      <article class="col-xs-12 maincontent">
-         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <h3 class="thin text-center">Register a new account</h3>
-              <p class="text-center text-muted"> <a href="signin.html">Login</a> to your account or register a user. </p>
-              <hr>
-
-              <!-- <form> -->
-              <%= simple_form_for @user, :html => {:class =>'form-horizontal'}  do |f| %>
-                   <%= f.input :name%>
-                 <%= f.input :email%>
-                 <%= f.input :password %>
-                 <%= f.input :password_confirmation %>
-
-                <hr>
-
-                  <div class="col-lg-8">
-                    <label class="checkbox">
+ <div class="col-md-9">
+        <article class="col-xs-12 maincontent">
+  <div class="col-md-9 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <h3 class="text-left">Register a new user</h3>
+                                  <!-- <form> -->
+                <p class="text-left text-muted"> <%= link_to 'Login', signin_path %> to your account if you are a customer. </p>
+                <%= simple_form_for @user, :html => {:class =>'form-horizontal'}  do |f| %>
+                <%= f.input :name, :input_html => {:class => "form-control input-sm"}, :label => false, :placeholder => "Name" %>
+                <%= f.input :email, :input_html => {:class => "form-control input-sm"}, :label => false, :placeholder => "Email" %>
+                <%= f.input :password, :input_html => {:class => "form-control input-sm"}, :label => false, :placeholder => "Password" %>
+                <%= f.input :password_conformation, :input_html => {:class => "form-control input-sm"}, :label => false, :placeholder => "Password Conformation" %>
+                   <!-- <form> -->
                       <input type="checkbox">
                       I've read the <a href="page_terms.html">Terms and Conditions</a>
-                    </label>
-                  </div>
-                  <div class="col-lg-4 text-right">
-                    <button class="btn btn-action" type="submit">Register</button>
+                  <div class="col-lg-9 text-right">
+                    <button class="btn-sm btn-action" type="submit">Register</button>
                   </div>
               <!-- </form> -->
               <% end %>
-            </div>
-          </div>
-        </div>
-      </article>
-      <!-- /Article -->
-    </div>
-  </div>  <!-- /container -->
+              <br>
+  </div>
+  </article>
   </div>
