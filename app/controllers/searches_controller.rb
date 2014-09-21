@@ -1,5 +1,7 @@
 class SearchesController < ApplicationController
-    before_action :set_search, only: [:show]
+      include CurrentCart
+     before_action :set_search, only: [:show]
+     before_action :set_cart
 
 
     def new
