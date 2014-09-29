@@ -1,3 +1,4 @@
+<% provide(:title, 'Store-All Products') %>
       <!-- Article main content -->
       <article class="col-sm-9 thumbnails ">
           <h2 class="section-title"><%= Product.search(params[:search]).size == Product.all.size ? "All Products" : "#{Product.search(params[:search]).size} products" %></h2>

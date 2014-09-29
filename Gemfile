@@ -18,7 +18,8 @@ gem "simple_form",  github: 'plataformatec/simple_form'
 gem 'bcrypt'
 gem 'will_paginate'
 gem 'jquery-turbolinks'
-gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'guard'
+gem 'guard-livereload', require: false
 
 
 group :development, :test do
