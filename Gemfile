@@ -18,8 +18,7 @@ gem "simple_form",  github: 'plataformatec/simple_form'
 gem 'bcrypt'
 gem 'will_paginate'
 gem 'jquery-turbolinks'
-gem 'guard'
-gem 'guard-livereload', require: false
+
 
 
 group :development, :test do
@@ -27,6 +26,8 @@ gem "better_errors"
 gem "binding_of_caller"
 gem 'spring'
 gem 'rspec-rails'
+gem 'guard'
+gem 'guard-livereload', require: false
 end
 
 group :test do
