@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag  'application',"http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700|Wire+One","http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-    <%= csrf_meta_tags %>
-
+<head>
+<title><%= full_title(yield(:title)) %></title>
+<%= stylesheet_link_tag  'application',"https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700|Wire+One","https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body class="home">
-    <div id = "j-header">
-      <%= render 'layouts/header' %>
-    </div>
-<!-- To show flash messages  -->
-      <% flash.each do |name, msg| %>
-<div class="alert alert-<%= name %>">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <%= msg %>
+<div id = "j-header">
+<%= render 'layouts/header' %>
 </div>
-            <% end %>
+<%= render 'layouts/flash_messages' %>
 <main id="main">
-	<div class="container-fluid">
-              <%= render 'layouts/search_form' %>
-  	       <%= yield %>
-              <!--   <%#= render 'layouts/featured_topspace' %>
-                   <%#= render 'layouts/recentworks_topspace' %>
-                   <%#= render 'layouts/section_topspace' %>
-                   <%#= render 'layouts/clients_topspace' %>
-               -->
-	</div>	<!-- End of Container -->
+<div class="container-fluid">
+<%= render 'layouts/search_form' %>
+<%= yield %>
+</div>	<!-- End of Container -->
 </main>
-        <%= render 'layouts/footer' %>
-        <%#= render 'layouts/underfooter' %>
-      <!-- Debuging  -->
-      <%= debug(params) if Rails.env.development? %>
+<%= render 'layouts/footer' %>
+<%#= debug(params) if Rails.env.development? %>
 </body>
 </html>
 

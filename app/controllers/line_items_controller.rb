@@ -64,14 +64,14 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
    def destroy
-        if @cart.line_items.count == 1 && @line_item.quantity == 1 
+        if @cart.line_items.count == 1 && @line_item.quantity == 1
             @line_item.destroy
         else
             @cart.remove_product(@line_item.product_id)
         end
     respond_to do |format|
       format.html { redirect_to line_items_url}
-      format.js 
+      format.js { render js: "window.location='#{root_url}'" if @cart.line_items.size == 1}
       format.json { head :no_content }
     end
   end
