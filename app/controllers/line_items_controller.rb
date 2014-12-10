@@ -2,8 +2,8 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:create, :destroy]
-  before_action :signed_in_user, only: [:index, :show, :new, :edit]
-  before_action :admin_user , only: [:index, :show, :new, :edit]
+  before_action :signed_in_user, only: [:index, :show, :edit]
+  before_action :admin_user , only: [:index, :show, :edit]
 
 
 

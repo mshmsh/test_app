@@ -3,18 +3,24 @@ require 'test_helper'
 class OrdersControllerTest < ActionController::TestCase
   setup do
     @order = orders(:one)
+    @admin = users(:one)
+    @cart = carts(:one)
   end
 
   test "should get index" do
+    log_in_as(@admin)
     get :index
     assert_response :success
     assert_not_nil assigns(:orders)
   end
   test "requires item in cart" do
     get :new
-    assert_redirected_to root_path
-    assert_equal flash[:notice], 'Your cart is empty'
+    if @cart.line_items.empty?
+      assert_redirected_to root_path
+      assert_equal flash[:notice], 'Your cart is empty'
+    end
   end
+
   test "should get new" do
     cart = Cart.create
     session[:cart_id] = cart.id
@@ -32,11 +38,13 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should show order" do
+    log_in_as(@admin)
     get :show, id: @order
     assert_response :success
   end
 
   test "should get edit" do
+    log_in_as(@admin)
     get :edit, id: @order
     assert_response :success
   end

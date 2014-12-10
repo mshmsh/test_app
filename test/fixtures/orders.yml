@@ -3,7 +3,9 @@
 one:
   order_date: 2014-06-26 10:20:29
   order_num: MyString
+  customer: one
 
 two:
   order_date: 2014-06-26 10:20:29
   order_num: MyString
+  customer: two

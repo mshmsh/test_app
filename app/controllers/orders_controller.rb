@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:new, :create]
-  before_action :signed_in_user, only: [:index, :show, :new, :edit]
+  before_action :signed_in_user, only: [:index, :show, :edit]
   before_action :admin_user, only: [:index, :show]
 
 
@@ -20,12 +20,12 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    if @cart.line_items.empty? 
+    if @cart.line_items.empty?
         redirect_to root_url
         flash[:danger] = "Your cart is empty"
       return
     end
-      @order = Order.new      
+      @order = Order.new
   end
 
   # GET /orders/1/edit
@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     respond_to do |format|
-      if @order.save 
+      if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else

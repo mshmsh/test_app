@@ -4,8 +4,8 @@ class CustomersController < ApplicationController
   before_action :set_cart, only: [:new, :create]
   before_action :signed_in_user, only: [:index, :show, :edit]
   before_action :admin_user , only: [:index, :show, :edit, :destroy]
- 
- 
+
+
 
   # GET /customers
   # GET /customers.json
@@ -20,13 +20,12 @@ class CustomersController < ApplicationController
 
   # GET /customers/new
   def new
-    if @cart.line_items.empty? 
+    if @cart.line_items.empty?
         redirect_to root_url
         flash[:danger] = "Your cart is empty"
       return
     end
     @customer = Customer.new
-    #@order = @customer.orders.build
   end
 
   # GET /customers/1/edit
@@ -38,16 +37,16 @@ class CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     #@order = @customer.orders.build
-    @order = Order.new 
+    @order = Order.new
     @order.add_line_items_from_cart(@cart)
     @customer.orders << @order
 
-      
+
     respond_to do |format|
-      if @customer.save 
+      if @customer.save
          Cart.destroy(session[:cart_id])
          session[:cart_id] = nil
-          #Notifier.order_received(@order).deliver
+          Notifier.order_received(@order).deliver
         format.html { redirect_to root_url
           flash[:info] = 'Thank you for your purchase.' }
         format.json { render :show, status: :created, location: @customer }

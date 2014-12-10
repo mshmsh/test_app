@@ -25,7 +25,7 @@ test "buying a product" do
     assert_response :success
     assert_template "new"
     post_via_redirect "/customers" ,
-    :customer => { :first_name => "Dave Thomas" ,
+    :customer => { :first_name => "Dave Thomas" , last_name: "David",
     :address_1 => "123 The Street" ,
     :email  => "dave@example.com" ,
     :pay_type => "Check" }
@@ -33,10 +33,11 @@ test "buying a product" do
     assert_template "index"
     cart = Cart.find(session[:cart_id])
     assert_equal 0, cart.line_items.size
-    orders = Order.find(:all)
+    orders = Order.all
     assert_equal 1, orders.size
     order = orders[0]
     assert_equal "Dave Thomas",      order.customer.first_name
+    assert_equal "David", order.customer.last_name
     assert_equal "123 The Street",   order.customer.address_1
     assert_equal "dave@example.com", order.customer.email
     assert_equal "Check",            order.customer.pay_type
@@ -45,7 +46,7 @@ test "buying a product" do
     assert_equal ruby_book, line_item.product
     mail = ActionMailer::Base.deliveries.last
     assert_equal ["dave@example.com" ], mail.to
-    assert_equal 'Sam Ruby <depot@example.com>' , mail[:from].value
-    assert_equal "Pragmatic Store Order Confirmation" , mail.subject
+    assert_equal 'spirit_application@example.com' , mail[:from].value
+    assert_equal "Spirit Application Order Confirmation" , mail.subject
 end
 end

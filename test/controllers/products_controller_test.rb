@@ -8,6 +8,8 @@ class ProductsControllerTest < ActionController::TestCase
     :image_url => 'lorem.jpg',
     :price => 19.95
     }
+    @admin = users(:one)
+    log_in_as(@admin)
   end
 
   test "should get index" do
