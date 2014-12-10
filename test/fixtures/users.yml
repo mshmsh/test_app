@@ -1,0 +1,10 @@
+one:
+  name: Example User
+  email: example@example.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+
+two:
+  name: Example_2 User
+  email: example_2@example.com
+  password_digest: <%= User.digest('password') %>
