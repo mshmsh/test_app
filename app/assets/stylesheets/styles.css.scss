@@ -1,3 +1,5 @@
+@import 'mixin';
+
 html {
   font-size: 100%;
 }
@@ -42,9 +44,9 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  font-family: "EB Garamond", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  color: #333333;
+  color: #333;
 }
 h1 {
   font-size: 40px;
@@ -63,8 +65,11 @@ h4 {
   font-size: 1.5rem;
 }
 h5 {
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 16px;
+}
+h6 {
+  font-size: 14px;
+
 }
 a {
   color: #bd1550;
@@ -130,6 +135,7 @@ a:hover {
   border-radius: 0;
   background-clip: padding-box;
   width: 100%;
+  background: image-url("header-bg.png");
 
 }
 .navbar.stick {
@@ -145,9 +151,8 @@ a:hover {
   -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
-  font-family: "Open sans", Helvetica, Arial, sans-serif;
+  font-family: "Marcellus SC", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  text-transform: uppercase;
 }
 .navbar-collapse .navbar-nav {
   float: none;
@@ -159,21 +164,21 @@ a:hover {
   display: inline-block;
 }
 .navbar-collapse .navbar-nav > li > a {
-  padding: 20px 30px;
+  padding: 20px 15px;
 }
 .dropdown ul.dropdown-menu {
   top: 85%;
   text-align: left;
 }
 .dropdown ul.dropdown-menu > li > a {
-  padding: 5px 30px;
+  padding: 5px 15px;
 }
 .navbar-default {
   background-color: #ffffff;
   border-color: #cccccc;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #454545;
+  color: #555;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -348,132 +353,7 @@ img {
   vertical-align: middle;
   margin: 0 0 25px 0;
 }
-/* Section - Recent works */
-.thumbnails {
-  padding: 0;
-}
-.thumbnails li {
-  margin-bottom: 30px;
-}
-.thumbnails .details {
-  display: block;
-  text-align: left;
-  font-size: 12px;
-  font-size: 0.75rem;
-  margin-top: 0px;
-  margin-bottom: 50px;
-  margin-left: 100px;
-}
-.thumbnail {
-  display: block;
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
-  border: 0 none;
-  margin-bottom: 10px;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-}
-.thumbnail .img {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  height: 180px;
-  margin: 0 0 20px;
-  position: relative;
-}
-.thumbnail .title {
-  text-transform: uppercase;
-  margin: 0 2em;
-  display: block;
-  text-indent: 0;
-}
-.thumbnail .cover {
-  position: absolute;
-  display: block;
-  opacity: 0;
-  width: 100%;
-  height: 180px;
-  background-color: rgba(255, 255, 255, 0.6);
-  /* Add some stuff */
-  text-align: left;
-  padding: 10px 15px 10px 15px;
-  /* End */
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 550ms;
-  -moz-transition-duration: 550ms;
-  -o-transition-duration: 550ms;
-  transition-duration: 550ms;
-}
-.thumbnail .cover .more {
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-  height: 32px;
-  line-height: 32px;
-  padding: 0 20px;
-  -webkit-border-radius: 1px 0 0 1px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 1px 0 0 1px;
-  -moz-background-clip: padding;
-  border-radius: 1px 0 0 1px;
-  background-clip: padding-box;
-  font-size: 12px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0px #780d33;
-  background: #bd1550;
-  color: white;
-}
-.thumbnail .cover .more a {
-  color : white;
-}
-.thumbnail img {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 
-}
-.thumbnail:hover {
-  color: #333;
-  text-decoration: none;
-}
-.thumbnail:hover img {
-  -webkit-filter: saturate(0%);
-}
-.thumbnail:hover .cover {
-  opacity: 1;
-}
-/* pagination */
-.pagination > li > a {
-  color: #808080;
-  border: 0 none;
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-family: Georgia, serif;
-}
-.pagination > li > a:hover {
-  color: #000000;
-  background: none;
-}
-.pagination > li.active > a {
-  color: #333333;
-  background: none;
-}
-.pagination > li.active > a:hover {
-  color: #000000;
-  background: none;
-}
 /*********************************************************************
                                  BLOG
 **********************************************************************/
@@ -762,128 +642,82 @@ footer.entry-meta .meta-in {
   float: left;
   margin: 0 10px 0 0;
 }
-/* Max page width
-/////////////////////////////////////////////////////////////////////*/
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1080px;
+
+.product-element  ul > li {
+  display: inline-block;
   }
-  /* customize error messages*/
-.help-block {
-  display: horizontal;
-  margin: 5px;
-  margin-bottom: 5px;
-  color: #737373;
-}
-}
-.apple_pagination {
-  background: #f1f1f1;
-  border: 1px solid #e5e5e5;
-  text-align: center;
-  padding: 1em;
-  cursor: default; }
-  .apple_pagination a, .apple_pagination span {
-    padding: 0.2em 0.3em; }
-  .apple_pagination .disabled {
-    color: #aaaaaa; }
-  .apple_pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background-color: #bebebe;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    line-height: 1.5;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
-    border-radius: 1em;
-    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
-  .apple_pagination a {
-    text-decoration: none;
-    color: black; }
-  .apple_pagination a:hover, .apple_pagination a:focus {
-      text-decoration: underline; }
 
+  span.cover {
+    transition: all 1s;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid #999;
+    line-height: 32px;
+    font-size: 12px;
+    font-size: 0.75rem;
+    text-shadow: 0 1px 0px #780d33;
+    color: white;
+    opacity :0;
+      &:hover {
+      opacity: 1;
+      background-color: rgba(255, 255,255, 0.8);
+    }
+   }
+  span.add {
+    position:absolute;
+    text-align : center;
+    right: 100px;
+    bottom: 0;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 7px;
+    font-size: 10px;
+    font-size: 0.75rem;
+    background: image-url("header-bg.png");
+    &:hover , &:focus {
+      background: image-url("bg-content.jpg");
+    }
+    a {
+      color:white;
+      text-decoration: none;
+       }
+}
 
-   .artGroup {
-  display:block;
-  width:242px;
-  height:182px;
-  position:relative;
-  margin-bottom:20px;
-  margin-right:20px;
-  float:right;
+span.detail {
+    position:absolute;
+    text-align : center;
+    right: 0;
+    bottom: 0;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 7px;
+    font-size: 10px;
+    font-size: 0.75rem;
+    background: image-url("header-bg.png");
+    &:hover , &:focus {
+      background: image-url("bg-content.jpg");
+    }
+    a {
+      color:white;
+      text-decoration: none;
+        }
+}
 
-}
-.artwork {
-  display:block;
-  width:100%;
-  height:100%;
-}
-.artGroup img {
-  width:100%;
-  height:100%;
-  position:absolute;
-  display:block;
-}
-.artGroup .detail {
-  display:block;
-  width:100%;
-  height:100%;
-  position:absolute;
-  background:#fff;
-}
-.artGroup .detail p {
-  font-size: 12px;
-  text-align: left;
-  padding: 5px 5px;
-}
-/*  Without CSS3 */
-.artGroup.slide {
-  overflow: hidden;
-}
-.artGroup.slide .detail {
-  bottom:-364px;
-}
-/*  CSS3 Flip */
-.artGroup.flip {
-  -webkit-perspective:800px;
-  -moz-perspective:800px;
-  -ms-perspective:800px;
-  -o-perspective:800px;
-  perspective:800px;
-}
-.artGroup.flip .artwork {
-  -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
-  -ms-transition: -ms-transform 1s;
-  -o-transition: -o-transform 1s;
-  transition: transform 1s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.artGroup.flip .detail, .artGroup.flip .theFlip {
-  -webkit-transform: rotateY(-180deg);
-  -moz-transform: rotateY(-180deg);
-  -ms-transform: rotateY(-180deg);
-  -o-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-.artGroup.flip img, .artGroup.flip .detail {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-/* I am adding some stuff */
+  .img {
+    border-radius:3px;
+    margin-bottom: 40px;
+
+  }
 .widget span {
   font-family: "Open sans";
   font-size:12px;
 }
+
+
+
+
 
 
 

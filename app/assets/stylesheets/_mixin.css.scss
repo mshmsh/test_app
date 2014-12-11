@@ -1,0 +1,29 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin box-shadow($val) {
+  -webkit-box-shadow: $val;
+  -moz-box-shadow: $val;
+    -ms-box-shadow: $val;
+        box-shadow: $val;
+}
+
+@mixin linkColor($color) {
+     color: $color;
+
+     &:hover, &:active, &:focus {
+         color: lighten($color, 10%);
+         text-decoration: none;
+     }
+}
+
+@mixin text-shadow($val) {
+  -webkit-text-shadow: $val;
+  -moz-text-shadow: $val;
+    -ms-text-shadow: $val;
+        text-shadow: $val;
+}

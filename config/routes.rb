@@ -29,8 +29,7 @@ Rails.application.routes.draw do
   match '/blog', :to => 'static_pages#blog', :via => :get
   match '/about', :to => 'static_pages#about', :via => :get
 
-
-  # The priority is based upon order of creation: first created -> highest priority.
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
