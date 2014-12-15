@@ -2,21 +2,18 @@
 <html>
 <head>
 <title><%= full_title(yield(:title)) %></title>
-<%= stylesheet_link_tag  'application',"https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700|Wire+One|Josefin+Sans|EB+Garamond|Cinzel|Marcellus+SC|Montaga","https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag  'application',"https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700|Wire+One|Josefin+Sans|EB+Garamond|Cinzel|Marcellus+SC|Montaga|Lato","https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 </head>
 <body class="home">
 <div id = "j-header">
-<%= render 'layouts/header' %>
+<%#= render 'layouts/header' %>
 </div>
 <%= render 'layouts/flash_messages' %>
 <main id="main">
-<div class="container-fluid">
-<div class="col-sm-3"><%= render 'layouts/sidebar' %></div>
-<div class="col-sm-9">
+<div class="container">
 <%= yield %>
-</div>
 </div>	<!-- End of Container -->
 </main>
 <%= render 'layouts/footer' %>
