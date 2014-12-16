@@ -2,9 +2,9 @@
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		<%= pluralize @cart.total_items, 'Item' %>
 		<%= "(" + "#{number_to_currency(@cart.total_price, locale: :fi)}" + ")" %><b class="caret"></b></a>
-	<ul class="dropdown-menu">
-		<li><%= link_to 'Show Cart',:controller => 'static_pages', :action => 'cart'%></li>
-		<li><%= link_to 'Empty Cart', @cart, :method => :delete %> </li>
-		<li><%= link_to_unless_current 'Checkout', new_customer_path, :method=> :get %></li>
+	<ul class="dropdown-menu item">
+		<%= render @cart %>
+		<%= link_to 'Empty Cart', @cart, class: 'empty-link', :method => :delete %>
+		<%= link_to 'Checkout', new_customer_path, class: 'checkout-link', :method=> :get %>
 	</ul>
 <% end %>

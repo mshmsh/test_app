@@ -20,11 +20,7 @@ p {
   line-height: 1.6em;
   margin: 0 0 30px 0;
 }
-ul,
-ol {
-  line-height: 1.6em;
-  margin: 0 0 30px 0;
-}
+
 blockquote {
   padding: 10px 20px;
   margin: 0 0 30px;
@@ -73,11 +69,9 @@ h6 {
 
 }
 a {
-  color: #bd1550;
+  @include linkColor(#bd1550);
 }
-a:hover {
-  color: #e93675;
-}
+
 .lead {
   font-weight: 300;
   font-size: 21px;
@@ -175,6 +169,37 @@ li.navbar-right.dropdown {
   top: 85%;
   text-align: left;
 }
+
+.dropdown ul.dropdown-menu.item {
+  right: -5px;
+  width: 500px;
+  font-size: 12px;
+
+  .table > tbody > tr > td {
+    border-top: none;
+    padding: 3px 5px;
+  }
+
+  .table {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .empty-link {
+    font-family: "Takecover", Helvetica, arial;
+    font-size: 14px;
+    margin-left: 145px;
+    margin-right: 50px;
+    @include linkColor(#bd1550);
+  }
+
+  .checkout-link {
+    font-family: "Takecover", Helvetica, arial;
+    font-size: 14px;
+    @include linkColor(#FFC222);
+  }
+
+}
 .dropdown ul.dropdown-menu > li > a {
   padding: 5px 15px;
 }
@@ -192,7 +217,7 @@ li.navbar-right.dropdown {
 .navbar-default .dropdown ul.dropdown-menu {
   @include linkColor(#FFC222);
   background-color: #111;
-  margin: 8px -5px;
+  margin: 10px 0;
   @include border-radius(5px);
 
 }
@@ -318,13 +343,13 @@ img {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* Added some stuff */
+
 .btn-sm {
-  padding: 9px 30px;
-  font-size: 11px;
-  line-height: 1.33;
-  font-weight: normal;
+  padding: 4px 12px;
+  font-size: 10px;
   text-transform: uppercase;
+  font-weight: 400;
+  font-family: "abeatbyKaiRegular", Helvetica, arial;
 }
 .panel-cta {
   box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
@@ -687,15 +712,17 @@ span.product-item {
   right: 10px;
 
   .dropdown-menu {
-    min-width: 50px;
     margin-top: -5px;
   }
   ul.dropdown-menu {
     background-color: #111;
+    min-width: 0;
+    text-align: center;
   }
 
   ul.dropdown-menu > li > a {
     background-color: #111;
+    padding:0;
     }
 
     ul.dropdown-menu > li {
