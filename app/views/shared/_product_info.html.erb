@@ -1,11 +1,16 @@
-	<% if @products.any? %>
-		<% @products.each do |product| %>
-			<li class="col-sm-9">
-				<h5 class="col-sm-9"><%= product.title %></h5>
-				<h6 class="col-sm-8"><%= sanitize product.description %></h6>
-				<div class="pull-right"><%= image_tag(product.image_url, class: "img-thumbnail") %></div>
-				<span class="price text-center"><%= number_to_currency(product.price, locale: :fi) %></span>
-				<span class="cover"><span class="add"><%= link_to 'ADD TO BASKET' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span><span class="detail"><%= link_to 'MORE DETAILS' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span></span>
-			</li>
-		<% end %>
+<% if @products.any? %>
+	<% @products.each do |product| %>
+		<li class="col-sm-9">
+			<h5 class="col-sm-9"><%= product.title %></h5>
+			<h6 class="col-sm-8"><%= sanitize product.description %></h6>
+			<div class="pull-right"><%= image_tag(product.image_url, class: "img-thumbnail") %></div>
+			<span class="price text-center"><%= number_to_currency(product.price, locale: :fi) %></span>
+			<span class="cover">
+			<span class="product-item"><%= render 'shared/item_bar' %></span>
+			<span class="search"><%= render 'shared/search_form' %></span>
+			<span class="add"><%= link_to 'ADD TO BASKET' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span>
+			<span class="detail"><%= link_to 'MORE DETAILS' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span>
+			</span>
+		</li>
 	<% end %>
+<% end %>

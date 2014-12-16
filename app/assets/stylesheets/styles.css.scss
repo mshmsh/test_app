@@ -1,26 +1,5 @@
 @import 'mixin';
 
-@font-face {
-  font-family: "BlackJeans";
-  src: url("BlackJeans.ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Znikomit";
-  src: url("Znikomit.otf");
-}
-
-@font-face {
-  font-family: "Takecover";
-  src: url("Takecover.ttf");
-}
-
-@font-face {
-  font-family: "TopSecret";
-  src: url("TopSecret.ttf");
-}
-
 html {
   font-size: 100%;
 }
@@ -29,8 +8,6 @@ body {
   font-size: 0.9375rem;
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   color: #666666;
-  padding: 0;
-  padding-top: 70px;
   background: image-url("bg-main.jpg") no-repeat scroll center top rgba(0, 0, 0, 0);
 }
 .topspace {
@@ -91,7 +68,7 @@ h5 {
 h6 {
   font-family: "Znikomit", "EB Garamond", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  color : #FFC200;
+  color : #FFC222;
   font-weight: 700;
 
 }
@@ -150,24 +127,28 @@ a:hover {
 /*********************************************************************
                                                       NAVBAR
 **********************************************************************/
-.navbar {
-  border-width: 1px 0;
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
+.navbar-one {
+  right: 70px;
+  top: 30px;
+}
+
+.navbar-two {
+  top: 65px;
+}
+.navbar , .navbar-default{
+  min-height: 0;
+  margin-bottom: 0;
   width: 100%;
   background: transparent;
+  border : none;
+}
+ul.nav.navbar-nav {
+  margin-left: 70px;
+}
+li.navbar-right.dropdown {
+  margin-right: 70px;
+}
 
-}
-.navbar.stick {
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: .85;
-}
 .navbar-collapse {
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -175,7 +156,7 @@ a:hover {
   -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
-  font-family: "Marcellus SC", Helvetica, Arial, sans-serif;
+  font-family: "abeatbyKaiRegular", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 .navbar-collapse .navbar-nav {
@@ -188,7 +169,7 @@ a:hover {
   display: inline-block;
 }
 .navbar-collapse .navbar-nav > li > a {
-  padding: 20px 15px;
+  padding: 8px 10px;
 }
 .dropdown ul.dropdown-menu {
   top: 85%;
@@ -197,37 +178,40 @@ a:hover {
 .dropdown ul.dropdown-menu > li > a {
   padding: 5px 15px;
 }
-.navbar-default {
-  background-color: transparent;
-  border-color: #cccccc;
-}
+
 .navbar-default .navbar-nav > li > a {
-  color: #555;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
-  background-color: #ffffff;
+  @include linkColor(#FFC222);
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #000000;
-  background-color: #ffffff;
+  background-color: transparent;
 }
+
+.navbar-default .dropdown ul.dropdown-menu {
+  @include linkColor(#FFC222);
+  background-color: #111;
+  margin: 8px -5px;
+  @include border-radius(5px);
+
+}
+
 .navbar-default .dropdown ul.dropdown-menu > li > a {
-  color: #454545;
+    @include linkColor(#FFC222);
+    background-color: #111;
 }
+
 .navbar-default .dropdown ul.dropdown-menu > li > a:hover {
-  background-color: #eeeeee;
-  color: #000000;
+  background-color: #111;
+  //color: #000000;
 }
 .navbar-default .navbar-toggle {
   border-color: #ff0000;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #008000;
+  //background-color: #008000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #0000ff;
@@ -239,8 +223,8 @@ a:hover {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: transparent;
+  @include linkColor(#FFC222)
 }
 .navbar-brand {
   margin-top: 4px;
@@ -644,21 +628,7 @@ footer.entry-meta .meta-in {
   color: #ccc;
   margin: 0 0 20px;
 }
-#underfooter {
-  background: #191919;
-  padding: 15px 0;
-  color: #777;
-  font-size: 12px;
-}
-#underfooter a {
-  color: #aaa;
-}
-#underfooter a:hover {
-  color: #fff;
-}
-#underfooter p {
-  margin: 0;
-}
+
 .follow-me-icons {
   font-size: 30px;
 }
@@ -670,6 +640,7 @@ footer.entry-meta .meta-in {
 .product-element  ul > li {
   display: inline-block;
   left: 125px;
+  margin-bottom: 30px;
   }
 
   span.cover {
@@ -710,6 +681,35 @@ span.detail {
       }
 }
 
+span.product-item {
+  position:absolute;
+  top: 0;
+  right: 10px;
+
+  .dropdown-menu {
+    min-width: 50px;
+    margin-top: -5px;
+  }
+  ul.dropdown-menu {
+    background-color: #111;
+  }
+
+  ul.dropdown-menu > li > a {
+    background-color: #111;
+    }
+
+    ul.dropdown-menu > li {
+      margin: 0;
+    }
+
+  a {
+    font-family:  "abeatbyKaiRegular", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    @include linkColor(#FFC222);
+    }
+  }
+
+
 span.price {
   font-family: "Takecover", Helvetica, Arial, sans-serif;
   position:absolute;
@@ -719,8 +719,7 @@ span.price {
   padding: 1px 5px;
   font-size: 16px;
   color: #999;
-
-    }
+  }
 
   .img-thumbnail {
     border-radius:3px;
@@ -731,6 +730,62 @@ span.price {
 .widget span {
   font-family: "Open sans";
   font-size:12px;
+}
+
+
+.search form {
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  left: 270px;
+  bottom: 35px;
+  width: 283px;
+
+}
+
+.search input {
+  background: transparent;
+  border-color: #111;
+  color: #999;
+  display: block;
+  float: left;
+  font-family: "abeatbyKaiRegular","EB Garamond", arial;
+  font-size: 12px;
+  font-weight: 400;
+  &:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: none;
+
+  }
+}
+
+.ie .search input {
+    line-height: 40px;
+}
+
+.search input::-webkit-input-placeholder {
+   color: #999;
+}
+
+.search input:-moz-placeholder {
+   color: #999;
+}
+
+.alert {
+  padding: 3px;
+  margin-bottom: -100px;
+  margin-top: 72px;
+  margin-left: 80px;
+  width: 86%;
+  background: transparent;
+  border: none;
+  font-family: "Takecover", Helvetica, arial;
+  .close {
+    color : #fff;
+    font-family: Helvetica, arial;
+    margin-top: -4px;
+  }
 }
 
 

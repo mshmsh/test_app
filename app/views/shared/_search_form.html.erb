@@ -1,11 +1,4 @@
-<div class="row topspace">
-    <aside class="col-xs-2 sidebar sidebar-left">
-        <div class="row widget">
-        <div class="col-xs-12">
-            <p><%= form_tag root_path, :method => 'get' do %>
-                    <%= text_field_tag :search, params[:search], :class => "form-control input-sm", :placeholder => "Simple Search By Title"  %>
-                    <span class = "help-block">Press Enter to perform a search</span>
-                    <%end %>
-            </p>
-        </div>
-        </div>
+<%= form_tag root_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search], :class => "form-control input-sm", :placeholder => "Search"  %>
+<%end %>
+

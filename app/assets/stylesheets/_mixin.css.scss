@@ -16,7 +16,7 @@
      color: $color;
 
      &:hover, &:active, &:focus {
-         color: lighten($color, 10%);
+         color: lighten($color, 20%);
          text-decoration: none;
      }
 }
@@ -27,4 +27,40 @@
     -ms-text-shadow: $val;
         text-shadow: $val;
 }
+
+@font-face {
+  font-family: "BlackJeans";
+  src: url("BlackJeans.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Znikomit";
+  src: url("Znikomit.otf");
+}
+
+@font-face {
+  font-family: "Takecover";
+  src: url("Takecover.ttf");
+}
+
+@font-face {
+  font-family: "TopSecret";
+  src: url("TopSecret.ttf");
+}
+
+@font-face {
+  font-family: "abeatbyKaiRegular";
+  src: url("abeatbyKaiRegular.otf");
+}
+
+
+
+
+
+
+
+
+
+
 
