@@ -1,5 +1,6 @@
 <nav class="navbar-one navbar navbar-default" role="navigation">
   <div class="container">
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -7,21 +8,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" href="#">StoreJax</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-          <li class ="navbar-left"><%= link_to 'SignUp', signup_path %></li>
+          <li class ="navbar-left"><%= link_to 'SignUp', signup_path if !signed_in? %></li>
           <% if signed_in? %>
           <% if current_user.admin? %>
           <li class = "navbar-left"><%= link_to "Users", users_path %></li>
           <% end %>
           <li class="navbar-left dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu account">
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Settings",  edit_user_path(current_user) %></li>
-          <li class="divider"></li>
           <li><%= link_to "Sign out", signout_path, method: "delete" %>
           </li>
         </ul></li>

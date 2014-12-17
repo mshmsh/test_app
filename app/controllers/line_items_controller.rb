@@ -6,8 +6,6 @@ class LineItemsController < ApplicationController
   before_action :admin_user , only: [:index, :show, :edit]
 
 
-
-
   # GET /line_items
   # GET /line_items.json
   def index
@@ -71,7 +69,7 @@ class LineItemsController < ApplicationController
         end
     respond_to do |format|
       format.html { redirect_to line_items_url}
-      format.js { render js: "window.location='#{root_url}'" if @cart.line_items.size == 1}
+      format.js
       format.json { head :no_content }
     end
   end

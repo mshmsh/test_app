@@ -1,0 +1,13 @@
+<%= simple_form_for @user, :html => {:class =>'form-horizontal'}  do |f| %>
+      <%= f.input :name, :input_html => {:class => "form-control input-lg"}, :label => false, :placeholder => "Name" %>
+      <%= f.input :email, :input_html => {:class => "form-control input-lg"}, :label => false, :placeholder => "Email" %>
+      <%= f.input :password, :input_html => {:class => "form-control input-lg"}, :label => false, :placeholder => "Password" %>
+      <%= f.input :password_conformation, :input_html => {:class => "form-control input-lg"}, :label => false, :placeholder => "Password Conformation" %>
+    <div class="col-sm-2 col-sm-offset-7 btn-register">
+    	<% if @user.new_record? %>
+      		<button class="btn btn-lg btn-action" type="submit">Register</button>
+      	<% else %>
+ 		<button class="btn btn-lg btn-action" type="submit">Update</button>
+ 	<% end %>
+    </div>
+<% end %>
