@@ -1,4 +1,6 @@
+<div class="highlight">
 <% if @cart && @cart.line_items.count > 0 %>
 <%= pluralize @cart.total_items, 'Item' %>
 <%= "(" + "#{number_to_currency(@cart.total_price, locale: :fi)}" + ")" %>
 <% end %>
+</div>

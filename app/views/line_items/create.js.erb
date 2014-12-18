@@ -1,0 +1,14 @@
+$("#notice").hide()
+$('#cart').html("<%= j render(@cart) %>");
+$('#item').html("<%= j render :partial => 'shared/item_bar' %>");
+$('.product-item').html("<%= j render :partial => 'shared/item_bar_cover' %>");
+$("#modal-window").slideUp(1000);
+$('#flash_message_place').html("<%= j render :partial => 'layouts/flash_messages' %>");
+$('.highlight').css({
+  'color': '#111'
+}).animate({
+  'color': '#FFC222'
+}, 5000);
+
+
+

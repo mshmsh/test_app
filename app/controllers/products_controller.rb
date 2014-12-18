@@ -1,9 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user
-  before_action :admin_user
-
-
+  before_action :signed_in_user, except: [:show]
+  before_action :admin_user, except: [:show]
 
   # GET /products
   # GET /products.json
@@ -16,6 +14,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   # GET /products/new

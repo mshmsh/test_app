@@ -45,7 +45,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  color: #999;
+  color: #FFC222;
 }
 h1 {
   font-size: 40px;
@@ -64,14 +64,16 @@ h4 {
   font-size: 1.5rem;
 }
 h5 {
-  font-size: 19px;
-  font-family: "Takecover", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-size: 18px;
+  font-family: "BlackJeans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 h6 {
   font-family: "Znikomit", "EB Garamond", Helvetica, Arial;
   font-size: 12px;
-  color : #FFC222;
+  color : #999;
   font-weight: 700;
 }
 
@@ -276,29 +278,6 @@ li.navbar-right.dropdown {
 
 }
 
-
-
-/***********************************************************************
-                                     Sidebar special Nav
-*****************************************************************************************/
-.nav-side {
-  font-size: 24px;
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-top: -0.37em;
-}
-.nav-side > li > a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  color: #f392b4;
-}
-.nav-side > li > a:hover {
-  color: #bd1550;
-  background: none;
-}
-.nav-side > li.active > a {
-  color: #bd1550;
-}
 /*********************************************************************
                                 CONTENT
 **********************************************************************/
@@ -358,7 +337,7 @@ img {
 }
 
 .btn-login {
-  left: 40px;
+  left: 50px;
 }
 
 .btn-register {
@@ -653,9 +632,9 @@ footer.entry-meta .meta-in {
 #footer {
   background: image-url("footer-bg-bottom.jpg") no-repeat scroll center top transparent;
   padding: 30px 0 0 0;
+  margin-top: 25px;
   font-size: 12px;
   color: #999;
-  margin-top: 133px;
   min-height: 340px;
 }
 #footer a {
@@ -861,8 +840,9 @@ span.price {
 
 .select {
   option {
-  background: #111;
-  color: #999;
+    background: #111;
+    color: #999;
+    padding: 4px 15px;
 
 }
 }
@@ -884,6 +864,48 @@ span.price {
   display: inline-block;
   left: 100px;
  }
+
+ #modal-window {
+  background-color: rgba(0,0,0,0.8);
+
+    span.price-modal {
+      font-family: "Takecover", Helvetica, Arial, sans-serif;
+      position:absolute;
+      left: 30px;
+      bottom: 50px;
+      padding: 1px 5px;
+      font-size: 16px;
+      color: #999;
+      }
+
+     span.add-modal {
+      position:absolute;
+      right: 23px;
+      bottom: 10px;
+       a {
+      font-family:  "Comfortaa-Regular", Helvetica, Arial, sans-serif;
+      }
+  }
+}
+
+.modal-dialog {
+  .close {
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+.modal-body, .modal-header, .modal-footer {
+  background-color: #111;
+  border-top:none;
+  border-bottom:none;
+}
+
+body.modal-open {
+overflow-y:visible;
+margin-right: -13px;
+ }
+
 
 
 

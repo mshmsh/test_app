@@ -20,6 +20,7 @@
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/transition
 //= require twitter/bootstrap/affix
+//= require twitter/bootstrap/modal
 //= require_tree .
 
 
