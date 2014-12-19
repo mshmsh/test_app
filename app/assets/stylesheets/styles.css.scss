@@ -83,27 +83,6 @@ a {
   @include linkColor(#bd1550);
 }
 
-.lead {
-  font-weight: 300;
-  font-size: 21px;
-  font-size: 1.3125rem;
-}
-.text-msg {
-  line-height: 1.7em;
-  color: #b3b3b3;
-  font-weight: 300;
-  text-transform: capitalize;
-  margin-top: -0.23em;
-}
-.size-auto,
-.size-full,
-.size-large,
-.size-medium,
-.size-thumbnail {
-  max-width: 100%;
-  height: auto;
-}
-
 /*********************************************************************
                                                        HEADER
 **********************************************************************/
@@ -334,42 +313,6 @@ img {
   left: 40px;
 }
 
-.panel-cta {
-  box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
-  background: #f3f3f3;
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
-}
-.panel-cta p,
-.panel-cta h3,
-.panel-cta h4,
-.panel-cta h5,
-.panel-cta h6 {
-  margin: 0;
-}
-.panel-cta .panel-body {
-  padding: 35px;
-}
-/* Section - Featured */
-.featured {
-  font-size: 13px;
-  font-size: 0.8125rem;
-}
-.featured h3 {
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  line-height: 1.4em;
-  vertical-align: middle;
-  margin: 0 0 25px 0;
-}
-
 
 /*********************************************************************
                                 FOOTER
@@ -379,7 +322,7 @@ img {
   @include text-shadow(1px 1px #FFC222);
   font-family: "Comfortaa-Bold", Helvetica, Arial, sans-serif;
   padding: 60px 0 0 0;
-  margin-top: 80px;
+  margin-top: 40px;
   font-size: 12px;
   color: #999;
   min-height: 300px;
@@ -665,6 +608,25 @@ body.modal-open {
 overflow-y:visible;
 margin-right: -13px;
  }
+
+.pagination  {
+  a {
+    font-size: 12px;
+    font-family: "Znikomit",Georgia, serif;
+    font-weight: 700;
+    @include linkColor(#FFC222);
+    text-transform: uppercase;
+  }
+
+  .previous_page {
+    margin-left:140px;
+    margin-right: 705px;
+  }
+
+
+
+}
+
 
 
 

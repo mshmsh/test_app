@@ -2,7 +2,12 @@
   <div class="product-element topspace">
     	<ul class="col-sm-12"><%= render 'shared/product_info' %></ul>
   </div>
-<%= will_paginate @products, :container => false %>
+
+  <div class="container">
+		<div class="pagination">
+			<%= will_paginate @products, :container => false , page_links: false%>
+		</div>
+  </div>
 
 
 
