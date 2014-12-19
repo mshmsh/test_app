@@ -5,6 +5,6 @@
 <% end %>
 <td><%= line_item.quantity %></td>
 <td><%= line_item.product.title %></td>
-<td><%= number_to_currency(line_item.product.price, locale: :fi) %></td>
+<td><%= number_to_currency(line_item.product.price, locale: :fi) %>&nbsp;<i class="fa fa-eur"></td>
 <td ><%= link_to 'Remove', line_item, :method => :delete,  :remote => true %></td>
 </tr>

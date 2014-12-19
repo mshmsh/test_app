@@ -1,7 +1,7 @@
 <% if @cart && @cart.line_items.count > 0 %>
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		<%= pluralize @cart.total_items, 'Item' %>
-		<%= "(" + "#{number_to_currency(@cart.total_price, locale: :fi)}" + ")" %><b class="caret"></b></a>
+		<%=  "#{number_to_currency(@cart.total_price, locale: :fi)}" + " €" %> <b class="caret"></b></a>
 	<ul class="dropdown-menu item">
 		<%= render @cart %>
 		<%= link_to 'Empty Cart', @cart, class: 'empty-link', :method => :delete %>

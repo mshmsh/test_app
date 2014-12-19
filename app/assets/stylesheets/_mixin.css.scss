@@ -28,6 +28,14 @@
         text-shadow: $val;
 }
 
+@mixin transition($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val; /* IE10 is actually unprefixed */
+  -o-transition: $val;
+  transition: $val;
+}
+
 @font-face {
   font-family: "Comfortaa-Regular";
   src: url("Comfortaa-Regular.ttf");
@@ -40,8 +48,8 @@
 }
 
 @font-face {
-  font-family: "Takecover";
-  src: url("Takecover.ttf");
+  font-family: "Street Stencil";
+  src: url("Street Stencil.ttf");
 }
 
 @font-face {
@@ -55,8 +63,18 @@
 }
 
 @font-face {
-  font-family: "BlackJeans";
-  src: url("BlackJeans.ttf");
+  font-family: "Arenq";
+  src: url("Arenq.otf");
+}
+
+@font-face {
+  font-family: "c39hrp48dhtt";
+  src: url("c39hrp48dhtt.ttf");
+}
+
+@font-face {
+  font-family: "Swish Buttons NF";
+  src: url("Swish Buttons NF.ttf");
 }
 
 

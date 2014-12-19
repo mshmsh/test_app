@@ -64,11 +64,9 @@ h4 {
   font-size: 1.5rem;
 }
 h5 {
-  font-size: 18px;
-  font-family: "BlackJeans", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 14px;
+  font-family: "Arenq", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 h6 {
   font-family: "Znikomit", "EB Garamond", Helvetica, Arial;
@@ -187,6 +185,7 @@ li.navbar-right.dropdown {
   .table > tbody > tr > td {
     border-top: none;
     padding: 3px 5px;
+    @include linkColor(#FFC222);
   }
 
   .table {
@@ -195,26 +194,19 @@ li.navbar-right.dropdown {
   }
 
   .empty-link {
-    font-family: "Takecover", Helvetica, arial;
-    font-size: 14px;
+    font-family: "Street Stencil", Helvetica, arial;
+    font-size: 16px;
     margin-left: 145px;
     margin-right: 50px;
     @include linkColor(#bd1550);
   }
 
   .checkout-link {
-    font-family: "Takecover", Helvetica, arial;
-    font-size: 14px;
+    font-family: "Street Stencil", Helvetica, arial;
+    font-size: 16px;
     @include linkColor(#FFC222);
   }
 }
-
-.dropdown ul.dropdown-menu.account {
-  right: 10px;
-  font-size: 14px;
-  top: 20px;
-  min-width: 10px;
-  }
 
 .dropdown ul.dropdown-menu > li > a {
   padding: 5px 15px;
@@ -226,12 +218,13 @@ li.navbar-right.dropdown {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  background-color: rgba(0,0,0,0.9);
-  color: #FFC222;
+  color: #fff;
+  background-color: rgba(0,0,0,0.4);
+  @include border-radius(50px);
+
 }
 
 .navbar-default .dropdown ul.dropdown-menu {
-  @include linkColor(#FFC222);
   background-color: #111;
   margin: 10px 0;
   @include border-radius(5px);
@@ -245,14 +238,12 @@ li.navbar-right.dropdown {
 
 .navbar-default .dropdown ul.dropdown-menu > li > a:hover {
   background-color: #111;
-  //color: #000000;
 }
 .navbar-default .navbar-toggle {
   border-color: #ff0000;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  //background-color: #008000;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #0000ff;
@@ -293,21 +284,12 @@ img {
   font-family: "Comfortaa-Regular", Helvetica, Arial, sans-serif;
   color: #999;
   margin-top: 20px;
+  background-clip: padding-box;
   @include border-radius(0);
   @include box-shadow(0 0 0 1000px rgba(0,0,0,0.9) inset);
-  background-clip: padding-box;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
+  @include transition(all 0.2s ease-out);
   border: none;
   border-bottom: 1px solid #111;
-
   padding: 12px 35px;
 }
 
@@ -684,10 +666,10 @@ footer.entry-meta .meta-in {
   span.add {
     position:absolute;
     top: 75px;
-    left: 270px;
+    left: 250px;
 
     a {
-      font-family:  "Takecover", Helvetica, Arial, sans-serif;
+      font-family:  "Street Stencil", Helvetica, Arial, sans-serif;
       font-size: 18px;
       @include linkColor(#FFC222);
       }
@@ -696,10 +678,10 @@ footer.entry-meta .meta-in {
 span.detail {
   position:absolute;
   top: 75px;
-  right: 280px;
+  right: 250px;
 
     a {
-      font-family:  "Takecover", Helvetica, Arial, sans-serif;
+      font-family:  "Street Stencil", Helvetica, Arial, sans-serif;
       font-size: 18px;
       @include linkColor(#FFC222);
       }
@@ -731,17 +713,27 @@ span.product-item {
     ul.dropdown-menu > li {
       margin: 0;
     }
+
   }
 
 span.price {
-  font-family: "Takecover", Helvetica, Arial, sans-serif;
+  font-family: "c39hrp48dhtt", Helvetica, Arial, sans-serif;
   position:absolute;
   text-align : center;
-  left: 30px;
+  left: 25px;
   bottom: 25px;
   padding: 1px 5px;
-  font-size: 16px;
+  font-size: 40px;
   color: #999;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  .fa-eur {
+    position:absolute;
+    font-size: 9px;
+    margin-top: 41px;
+    margin-left: -6px;
+ }
   }
 
   .img-thumbnail {
@@ -792,14 +784,15 @@ span.price {
 }
 
 .alert {
-  padding: 0.22em;
+  padding: 0.16em;
   margin-bottom: -100px;
   margin-top: 72px;
   margin-left: 80px;
   width: 86%;
   background: transparent;
   border: none;
-  font-family: "Takecover", Helvetica, arial;
+  font-family: "Street Stencil", Helvetica, arial;
+  font-size: 16px;
   .close {
     color : #fff;
     font-family: Helvetica, arial;
@@ -869,13 +862,22 @@ span.price {
   background-color: rgba(0,0,0,0.8);
 
     span.price-modal {
-      font-family: "Takecover", Helvetica, Arial, sans-serif;
+      font-family: "c39hrp48dhtt", Helvetica, Arial, sans-serif;
       position:absolute;
       left: 30px;
-      bottom: 50px;
+      bottom: 20px;
       padding: 1px 5px;
-      font-size: 16px;
+      font-size: 35px;
       color: #999;
+      font-weight: 400;
+      letter-spacing: 1px;
+
+      .fa-eur {
+        position:absolute;
+        font-size: 9px;
+        margin-top: 35px;
+        margin-left: -6px;
+       }
       }
 
      span.add-modal {
@@ -905,6 +907,8 @@ body.modal-open {
 overflow-y:visible;
 margin-right: -13px;
  }
+
+
 
 
 
