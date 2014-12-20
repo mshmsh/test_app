@@ -83,30 +83,6 @@ a {
   @include linkColor(#bd1550);
 }
 
-/*********************************************************************
-                                                       HEADER
-**********************************************************************/
-.home #head {
-  padding: 90px 0;
-}
-.home #head .title {
-  font-size: 49px;
-  font-size: 3.0625rem;
-}
-.home #head .tagline {
-  font-size: 16px;
-  font-size: 1rem;
-  margin: 15px 0 0;
-}
-@media (max-width: 767px) {
-  #head { min-height:420px; padding-top:160px; }
-  #head .lead { font-size: 34px; }
-}
-.slideUp { top:-100px; }
-.headroom { -webkit-transition: all 0.4s ease-out;
-            -moz-transition: all 0.4s ease-out;
-            -o-transition: all 0.4s ease-out;
-            transition: all 0.4s ease-out; }
 
 /*********************************************************************
                                                       NAVBAR
@@ -202,8 +178,8 @@ li.navbar-right.dropdown {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
-  background-color: rgba(0,0,0,0.4);
-  @include border-radius(50px);
+  background-color: rgba(255,255,255,0.2);
+  @include border-radius(5px);
 
 }
 
@@ -253,11 +229,8 @@ li.navbar-right.dropdown {
 }
 
 /*********************************************************************
-                                CONTENT
+                                                       BUTTON
 **********************************************************************/
-img {
-  max-width: 100%;
-}
 
 .btn {
   font-size: 12px;
@@ -269,10 +242,10 @@ img {
   margin-top: 20px;
   background-clip: padding-box;
   @include border-radius(0);
-  @include box-shadow(0 0 0 1000px rgba(0,0,0,0.9) inset);
+  @include box-shadow(0 0 0 1000px rgba(0,0,0,0.6) inset);
   @include transition(all 0.2s ease-out);
   border: none;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #999;
   padding: 12px 35px;
 }
 
@@ -317,12 +290,13 @@ img {
 /*********************************************************************
                                 FOOTER
 **********************************************************************/
+
 #footer {
   background: image-url("footer-bg-bottom.jpg") no-repeat scroll center top transparent;
   @include text-shadow(1px 1px #FFC222);
   font-family: "Comfortaa-Bold", Helvetica, Arial, sans-serif;
   padding: 60px 0 0 0;
-  margin-top: 40px;
+  margin-top: 10px;
   font-size: 12px;
   color: #999;
   min-height: 300px;
@@ -347,10 +321,14 @@ img {
   margin-left: 130px;
 }
 
+/*********************************************************************
+                                                       MIC
+**********************************************************************/
+
 .product-element  ul > li {
   display: inline-block;
   left: 125px;
-  margin-bottom: 30px;
+  margin-bottom: 7px;
   }
 
   span.cover {
@@ -446,8 +424,57 @@ span.price {
     border-radius:3px;
     margin-bottom: 40px;
     font-family: "TopSecret", Helvetica, Arial, sans-serif;
-
   }
+
+  .user, .customer {
+  margin-left: 230px;
+ }
+
+ .login {
+  margin-left: 225px;
+ }
+
+ ul.users  > li {
+  display: inline-block;
+  left: 100px;
+ }
+
+ .alert {
+  padding: 0.16em;
+  margin-bottom: -100px;
+  margin-top: 72px;
+  margin-left: 80px;
+  width: 86%;
+  background: transparent;
+  border: none;
+  font-family: "Street Stencil", Helvetica, arial;
+  font-size: 16px;
+  .close {
+    color : #fff;
+    font-family: Helvetica, arial;
+    margin-top: -4px;
+  }
+}
+
+.pagination  {
+  font-family: "Znikomit",Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  a {
+      @include linkColor(#FFC222);
+    }
+
+  .previous_page {
+    margin-left: 140px;
+    margin-right: 705px;
+  }
+}
+
+  /*********************************************************************
+                                                       FORM
+**********************************************************************/
+
 
 .search form {
   position: absolute;
@@ -484,23 +511,6 @@ span.price {
    color: #999;
 }
 
-.alert {
-  padding: 0.16em;
-  margin-bottom: -100px;
-  margin-top: 72px;
-  margin-left: 80px;
-  width: 86%;
-  background: transparent;
-  border: none;
-  font-family: "Street Stencil", Helvetica, arial;
-  font-size: 16px;
-  .close {
-    color : #fff;
-    font-family: Helvetica, arial;
-    margin-top: -4px;
-  }
-}
-
 .form-group {
   margin-bottom: 0;
 }
@@ -512,7 +522,7 @@ span.price {
   font-size: 12px;
   font-weight: 300;
   font-family: "Comfortaa-Regular",courier,monospace;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #999;
   @include box-shadow(0 0 0 1000px rgba(0,0,0,0.6) inset);
   @include border-radius(0);
 
@@ -546,18 +556,9 @@ span.price {
   margin-left: 15px;
 }
 
- .user, .customer {
-  margin-left: 230px;
- }
-
- .login {
-  margin-left: 225px;
- }
-
- ul.users  > li {
-  display: inline-block;
-  left: 100px;
- }
+/*********************************************************************
+                                                       MODAL
+**********************************************************************/
 
  #modal-window {
   background-color: rgba(0,0,0,0.8);
@@ -608,35 +609,4 @@ body.modal-open {
 overflow-y:visible;
 margin-right: -13px;
  }
-
-.pagination  {
-  a {
-    font-size: 12px;
-    font-family: "Znikomit",Georgia, serif;
-    font-weight: 700;
-    @include linkColor(#FFC222);
-    text-transform: uppercase;
-  }
-
-  .previous_page {
-    margin-left:140px;
-    margin-right: 705px;
-  }
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
