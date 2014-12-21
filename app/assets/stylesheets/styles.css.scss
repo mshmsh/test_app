@@ -144,18 +144,24 @@ li.navbar-right.dropdown {
   .table > tbody > tr > td {
     border-top: none;
     padding: 3px 5px;
-    @include linkColor(#FFC222);
+    color: #FFC222;
+    border: none;
   }
 
   .table {
     margin-left: 20px;
     margin-bottom: 10px;
-  }
+    width: 100%;
+    background:transparent;
+    font-family: "abeatbyKaiRegular", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+
+ }
 
   .empty-link {
     font-family: "Street Stencil", Helvetica, arial;
     font-size: 16px;
-    margin-left: 145px;
+    margin-left: 115px;
     margin-right: 50px;
     @include linkColor(#bd1550);
   }
@@ -286,6 +292,10 @@ li.navbar-right.dropdown {
   left: 40px;
 }
 
+.btn-order {
+  margin-left: 900px;
+}
+
 
 /*********************************************************************
                                 FOOTER
@@ -296,10 +306,10 @@ li.navbar-right.dropdown {
   @include text-shadow(1px 1px #FFC222);
   font-family: "Comfortaa-Bold", Helvetica, Arial, sans-serif;
   padding: 60px 0 0 0;
-  margin-top: 10px;
+  margin-top: 40px;
   font-size: 12px;
   color: #999;
-  min-height: 300px;
+  min-height: 341px;
 
   a {
     @include linkColor(#363F45);
@@ -417,6 +427,7 @@ span.price {
     font-size: 9px;
     margin-top: 41px;
     margin-left: -6px;
+    font-weight: 300;
  }
   }
 
@@ -432,6 +443,10 @@ span.price {
 
  .login {
   margin-left: 225px;
+ }
+
+ .show-cart {
+  margin-left: 120px;
  }
 
  ul.users  > li {
@@ -471,6 +486,23 @@ span.price {
   }
 }
 
+.table > tbody > tr > td {
+    border-top: none;
+    padding: 10px 25px;
+    border-bottom: 1px solid #FFC222;
+
+  }
+
+  .table {
+    margin-left: 170px;
+    width: 70%;
+    background: rgba(255,255,255,0.1);
+    color:#fff;
+    font-family: "Znikomit",Georgia, serif;
+    font-weight: 700;
+    font-size: 12px;
+    }
+
   /*********************************************************************
                                                        FORM
 **********************************************************************/
@@ -480,9 +512,9 @@ span.price {
   position: absolute;
   display: inline-block;
   z-index: 1;
-  left: 270px;
+  left: 268px;
   bottom: 35px;
-  width: 283px;
+  width: 300px;
 
 }
 
@@ -579,6 +611,7 @@ span.price {
         font-size: 9px;
         margin-top: 35px;
         margin-left: -6px;
+        font-weight: 300;
        }
       }
 

@@ -36,18 +36,10 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-    #@order = @customer.orders.build
-    @order = Order.new
-    @order.add_line_items_from_cart(@cart)
-    @customer.orders << @order
-
 
     respond_to do |format|
       if @customer.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        #Notifier.order_received(@order).deliver
-        format.html { redirect_to root_url
+          format.html { redirect_to root_url
           flash[:info] = 'Thank you for your purchase.' }
         format.json { render :show, status: :created, location: @customer }
       else

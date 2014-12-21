@@ -1,5 +1,8 @@
-<!-- <h1>New order</h1> -->
-
-<%= render 'form' %>
-
-<%= link_to 'Back', orders_path %>
+<div class="topspace">
+	<% if @cart %>
+	    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+	    <%= render @cart %>
+	    <%= render 'form' %>
+	    <% end %>
+	<% end %>
+</div>

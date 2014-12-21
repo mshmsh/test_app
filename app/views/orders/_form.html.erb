@@ -10,17 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :order_date %><br>
-    <%= f.datetime_select :order_date %>
-  </div>
-  <div class="field">
-    <%= f.label :order_num %><br>
-    <%= f.text_field :order_num %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.hidden_field 'order_date' %>
+    <%= f.hidden_field 'order_num' %>
+    <button class="btn btn-md btn-action btn-order" type="submit">Order</button>
 <% end %>

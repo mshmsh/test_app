@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :signed_in_user, only: [:index, :show, :new, :edit]
-  before_action :admin_user , only: [:index, :show, :new, :edit]
+  before_action :admin_user , only: [:index, :new, :edit]
 
   # GET /carts
   # GET /carts.json

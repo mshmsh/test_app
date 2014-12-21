@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :orders, :dependent => :destroy
   before_create :create_remember_token
   has_secure_password
   before_save { self.email = email.downcase }

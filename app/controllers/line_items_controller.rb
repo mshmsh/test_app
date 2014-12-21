@@ -64,15 +64,15 @@ class LineItemsController < ApplicationController
    def destroy
         if @cart.line_items.count == 1 && @line_item.quantity == 1
             @line_item.destroy
+              respond_to do |format|
+                format.html { redirect_to line_items_url}
+                format.js { render js: "window.location='#{root_path}'" }
+                format.json { head :no_content }
+            end
         else
             @cart.remove_product(@line_item.product_id)
         end
-    respond_to do |format|
-      format.html { redirect_to line_items_url}
-      format.js
-      format.json { head :no_content }
-    end
-  end
+   end
 
   private
     # Use callbacks to share common setup or constraints between actions.

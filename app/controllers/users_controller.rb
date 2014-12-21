@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @orders = current_user.orders
   end
   # POST /carts
   # POST /carts.json

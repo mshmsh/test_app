@@ -1,5 +1,4 @@
 class Customer < ActiveRecord::Base
-    has_many :orders, :dependent => :destroy
     EMAIL_REGEX = /\A[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}\Z/i
     validates :first_name, :presence => true,
                          :length => { :maximum => 25 }
