@@ -2,10 +2,8 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_cart, only: [:new, :create]
-  before_action :signed_in_user, only: [:index, :show, :edit]
-  before_action :admin_user, only: [:index, :show]
-
-
+  before_action :signed_in_user
+  before_action :admin_user, except: [:new , :create]
 
   # GET /orders
   # GET /orders.json
@@ -44,7 +42,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         #Notifier.order_received(@order).deliver
         format.html { redirect_to current_user
-        flash[:info] = 'Order was successfully created.' }
+        flash[:info] = 'Order was successfully created' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -58,7 +56,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, notice: 'Order was successfully updated' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }

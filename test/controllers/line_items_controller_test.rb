@@ -44,18 +44,6 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_redirected_to line_item_path(assigns(:line_item))
   end
 
-  test "should destroy line_item" do
-          assert_difference('LineItem.count', -1) do
-                 if @cart.line_items.count == 1 && @line_item.quantity == 1
-
-          delete :destroy, id: @line_item
-     else
-        @cart.remove_product(@line_item.product_id)
-      end
-    end
-    assert_redirected_to line_items_path
-  end
-
    test "should create line item via ajax" do
     assert_difference('LineItem.count') do
       xhr :post, :create, product_id: products(:ruby).id

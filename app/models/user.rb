@@ -18,6 +18,14 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def update_login_time
+    update_attribute(:login_time, Time.zone.now)
+  end
+
+  def set_previous_login_time
+    self.previous_login_time = self.login_time
+  end
+
   private
 
     def create_remember_token

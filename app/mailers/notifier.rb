@@ -8,7 +8,7 @@ class Notifier < ActionMailer::Base
   #
   def order_received(order)
     @order = order
-    mail :to => order.customer.email, :subject => 'Spirit Application Order Confirmation'
+    mail :to => order.user.email, :subject => 'Spirit Application Order Confirmation'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -18,6 +18,6 @@ class Notifier < ActionMailer::Base
   #
   def order_shipped(order)
     @order = order
-    mail :to => order.customer.email, :subject => 'Spirit Application Order Shipped'
+    mail :to => order.user.email, :subject => 'Spirit Application Order Shipped'
   end
 end

@@ -1,13 +1,34 @@
 <% provide(:title, @user.name) %>
-	<div class="topspace text-center">
+	<div class="profile topspace text-center">
 		<h5><%= @user.email %></h5>
-		<h6><%= @user.name %></h6>
-		<%= current_user.orders.count %><br>
-		<% @orders.each do |order| %>
-		<%= order.id %><br>
-		<% order.products.each do |product| %>
-		<%= product.title %><br>
-		<% end %>
-		<% end %>
-
+		<h6><%= @user.name %><span>&nbsp;&#124;&nbsp;</span><%= current_user.admin? ? "Admin" : "Regular User" %></h6>
+		<h6>
+		<span class="label label-info">Member Since: <%= current_user.created_at.strftime("%d %B,%Y") %>&nbsp;&#124;&nbsp;Last Login: <%= time_ago_in_words(current_user.previous_login_time) if current_user.previous_login_time? %> ago<br>
+			<%= pluralize current_user.orders.count, "order" if !current_user.orders.empty? %>
+			<%= pipe_content if !current_user.orders.empty? %>
+			Sum&#58;
+			<% sum = 0 %>
+			<% @orders.each do |order| %>
+				<% order_sum = number_to_currency(order.line_items.to_a.sum { |item| item.total_price }, locale: :fi).to_d %>
+				<% sum+=order_sum %>
+			<% end %>
+			<%= sum %>&nbsp;&euro;
+		</span>
+		</h6>
+			<% if @user.orders.empty? %><br>
+				<h6>You do not have any orders yet.</h6>
+			<% else %>
+			<table class="table">
+			<% @orders.each do |order| %>
+				<td>&#35;<%= order.order_num %></td>
+				<td><%= order.order_date.strftime("%d %B,%Y") if order.order_date? %></td>
+				<td><%= order.line_items.sum(:quantity) %></td>
+				<td><%= number_to_currency(order.line_items.to_a.sum { |item| item.total_price }, locale: :fi)  %>&nbsp;&euro;</td>
+				<td><% order.products.each do |product| %>
+				<%= product.title %><br>
+				<% end %></td>
+				<tr>
+			<% end %>
+			</table>
+			<% end %>
 	</div>

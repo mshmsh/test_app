@@ -1,3 +1,3 @@
 $('#cart').html("<%= j render(@cart) %>");
-$('#cart').remove;
+$('#new_order').html("<%= j render :partial => 'orders/form' %>");
 $('#item').html("<%= j render :partial => 'shared/item_bar' %>");

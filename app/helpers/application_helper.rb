@@ -15,4 +15,9 @@ module ApplicationHelper
             "#{base_title} / #{page_title}"
           end
       end
+
+      def pipe_content
+      		content_for(:pipe) || "|"
+      	end
+
 end

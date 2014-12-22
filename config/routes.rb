@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   match '/list', :to => 'static_pages#list', :via => :get
   match '/signup',  :to => 'users#new',     :via => :get
   match '/signin', :to => 'sessions#new',    :via => :get
+  match '/signin', :to => 'sessions#create', :via => :post
   match '/signout', :to => 'sessions#destroy', :via => :delete
   match '/edit',  :to => 'users#edit',     :via => :get
   match '/about', :to => 'static_pages#about', :via => :get
