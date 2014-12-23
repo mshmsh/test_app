@@ -5,10 +5,8 @@ html {
   @include text-shadow(1px 1px #000);
 }
 body {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  font-family: "Cinzel", Helvetica, Arial, sans-serif;
-  color: #666666;
+  font-family: "Znikomit", Helvetica, Arial, sans-serif;
+  color: #999;
   background: image-url("bg-main.jpg") no-repeat scroll center top rgba(0, 0, 0, 0);
 }
 
@@ -451,7 +449,8 @@ span.price {
 
  ul.users  > li {
   display: inline-block;
-  left: 100px;
+  left: 80px;
+  font-weight: 700;
  }
 
  .alert {
@@ -523,6 +522,16 @@ span.price {
     letter-spacing: 1px;
     font-size: 10px;
  }
+
+  .about {
+    margin-left : 165px;
+    font-weight: 700;
+    font-size: 12px;
+    p {
+      color: #fff;
+    }
+
+  }
 
   /*********************************************************************
                                                        FORM

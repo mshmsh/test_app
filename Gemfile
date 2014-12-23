@@ -18,6 +18,8 @@ gem "simple_form",  github: 'plataformatec/simple_form'
 gem 'bcrypt'
 gem 'will_paginate'
 gem 'jquery-turbolinks'
+gem 'redcarpet'
+gem 'rouge'
 
 group :development, :test do
 gem "better_errors"

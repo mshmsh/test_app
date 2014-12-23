@@ -1,6 +1,24 @@
 <% provide(:title, 'About') %>
-<div class="topspace">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, in necessitatibus blanditiis ea quasi mollitia! Facilis impedit dolorem quia. Accusantium quaerat quidem voluptatum debitis, fuga quisquam. Accusantium eum explicabo adipisci!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat autem ipsa voluptas eos odio itaque amet nam eligendi sint dolorum, earum, ipsum, eum temporibus, dolore officiis animi eaque nesciunt corporis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, totam quis laboriosam quibusdam veniam dolores perspiciatis repellendus? Fugiat magnam eius, perferendis error modi alias eum libero ducimus inventore sapiente. Pariatur.</p>
+<div class="about topspace">
+	<div class="col-sm-10"><%= markdown("
+##### More Details
+This application's *frontend* is based on *bootstrap 3.3.1* and the whole application works on *rails 4.1.1* .
+The result of test which has been performed by *guard* is :
+```shell
+Finished in 5.084775s, 10.0299 runs/s, 21.2399 assertions/s.
+51 runs, 108 assertions, 0 failures, 0 errors, 0 skips
+```
+To be able to test it as *regular user* :
+```shell
+username: example-1@example.com
+password: password
+```
+And as an *admin* :
+```shell
+username: example@example.com
+password: foobar
+```
+") %></div>
 </div>
 
 

@@ -155,7 +155,9 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.2.2)
     ref (1.0.5)
+    rouge (1.7.4)
     rubyzip (1.1.6)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -224,6 +226,8 @@ DEPENDENCIES
   rails (= 4.1.1)
   rails_12factor (= 0.0.2)
   random_data
+  redcarpet
+  rouge
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   selenium-webdriver
