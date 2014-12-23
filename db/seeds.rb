@@ -17,7 +17,7 @@ product = Product.create(
 	      :title => Commerce.product_name,
 	      :price=> Commerce.price.to_d,
 	      :description=> Lorem.paragraph,
-	      :category_id => Random.number(1..9),
+	      :category_id => Random.number(1..10),
 	      :image_url => r.sample)
 end
 
