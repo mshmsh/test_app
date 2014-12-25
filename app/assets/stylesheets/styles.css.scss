@@ -323,7 +323,7 @@ li.navbar-right.dropdown {
 }
 
   .follow-me-icons {
-    font-size: 25px;
+    font-size: 20px;
     i {
       margin-left: 10px;
     }
@@ -331,6 +331,10 @@ li.navbar-right.dropdown {
 
 .footer-right {
   margin-left: 130px;
+}
+
+.footer-middle {
+  left: 15px;
 }
 
 /*********************************************************************
@@ -653,6 +657,7 @@ span.price {
  .form-control::-moz-placeholder { color : #999;}
 
  .has-error  .form-control{
+  @include box-shadow(0 0 0 1000px rgba(0,0,0,0.6) inset);
     &:focus {
       @include box-shadow(0 0 0 1000px #111 inset);
     }
@@ -670,6 +675,7 @@ span.price {
   font-family: "Comfortaa-Regular",courier,monospace;
   font-size: 12px;
   margin-left: 15px;
+  text-transform: capitalize;
 }
 
 /*********************************************************************
@@ -701,7 +707,7 @@ span.price {
 
      span.add-modal {
       position:absolute;
-      right: 23px;
+      right: 18px;
       bottom: 10px;
        a {
       font-family:  "Comfortaa-Regular", Helvetica, Arial, sans-serif;

@@ -66,7 +66,9 @@ class LineItemsController < ApplicationController
             @line_item.destroy
               respond_to do |format|
                 format.html { redirect_to line_items_url}
-                format.js { render js: "window.location='#{root_path}'" }
+                format.js      { flash[:info] = "Your cart is empty now"
+                                        flash.keep(:info)
+                                        render js: "window.location='#{root_path}'" }
                 format.json { head :no_content }
             end
         else
