@@ -6,10 +6,12 @@
 			<div class="pull-right"><%= image_tag(product.image_url, class: "img-thumbnail") %></div>
 			<span class="price text-center"><%= number_to_currency(product.price, locale: :fi) %>&nbsp;<i class="fa fa-eur"></i></span>
 			<span class="cover">
-			<span class="product-item"><%= render 'shared/item_bar_cover' %></span>
-			<span class="search"><%= render 'shared/search_form' %></span>
-			<span class="add"><%= link_to 'ADD TO BASKET' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span>
-			<span class="detail"><%= link_to 'MORE DETAILS' ,product_path(product.id), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => 'modal-window'} %></span>
+				<span class="product-item"><%= render 'shared/item_bar_cover' %></span>
+				<span class="search"><%= render 'shared/search_form' %></span>
+				<span class="add"><%= link_to 'ADD TO BASKET' ,line_items_path(:product_id => product), :method => :post, :remote => true %></span>
+				<span class="detail"><%= link_to 'MORE DETAILS' ,product_path(product.id), {:remote => true, 'data-toggle' =>  "modal", 'data-target' => 'modal-window'} %>
+				</span>
+				<span class="advance-search"><%= link_to 'Advance Search', new_search_path, remote: true %></span>
 			</span>
 		</li>
 	<% end %>

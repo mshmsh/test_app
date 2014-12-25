@@ -1,25 +1,9 @@
-<%= form_for  Search.new do |f|  %>
-    <div class="row widget">
-      <div class="col-xs-12">
-      <p><%= f.text_field :keywords, :class => "form-control input-sm",:placeholder => "Advanced Search By Keywords" %> </p>
-  </div>
+<div class="advance-search-form">
+  <%= form_for  Search.new do |f|  %>
+        <%= f.text_field :keywords, :class => "form-control input-sm",:placeholder => "Keywords" %>
+        <%= f.text_field :max_price, :class => "form-control input-sm", :placeholder => "Max Price" %>
+        <%= f.text_field :min_price, :class => "form-control input-sm", :placeholder => "Min Price" %>
+        <button type="submit" class="btn btn-md btn-action btn-advance-search">Search</button>
+  <% end %>
 </div>
-<div class="row widget">
-      <div class="col-xs-12">
-      <p><%= f.text_field :max_price, :class => "form-control input-sm", :placeholder => "Advanced Search By Max Price" %> </p>
-  </div>
-</div>
-<div class="row widget">
-      <div class="col-xs-12">
-      <p><%= f.text_field :min_price, :class => "form-control input-sm", :placeholder => "Advanced Search By Min Price" %> </p>
-  </div>
-</div>
-<div class="row widget">
-      <div class="col-xs-12">
-      <p><%= f.submit "search" , :class => " btn-action btn-sm"%>
-</p>
-  </div>
-</div>
-<% end %>
 
-      </aside>

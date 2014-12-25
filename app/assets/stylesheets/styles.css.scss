@@ -294,6 +294,10 @@ li.navbar-right.dropdown {
   margin-left: 900px;
 }
 
+.btn-advance-search {
+  margin-left: 750px;
+  opacity: 0;
+}
 
 /*********************************************************************
                                 FOOTER
@@ -429,6 +433,16 @@ span.price {
  }
   }
 
+  span.advance-search {
+    font-family:  "abeatbyKaiRegular", Helvetica, Arial, sans-serif;
+    position:absolute;
+    bottom: 0;
+    right: 360px;
+    font-size: 12px;
+    color: #FFC222;
+
+  }
+
   .img-thumbnail {
     border-radius:3px;
     margin-bottom: 30px;
@@ -556,7 +570,6 @@ span.price {
   left: 268px;
   bottom: 35px;
   width: 300px;
-
 }
 
 .search input {
@@ -567,6 +580,31 @@ span.price {
   font-family: "abeatbyKaiRegular","EB Garamond", arial;
   font-size: 12px;
   font-weight: 400;
+  &:focus {
+    @include box-shadow(0 0 0 1000px #111 inset);
+  }
+}
+
+.advance-search-form form  {
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  left: 0;
+  bottom: 60px;
+  width: 835px;
+}
+
+.advance-search-form input {
+  background: transparent;
+  color: #999;
+  display: block;
+  float: left;
+  font-family: "abeatbyKaiRegular","EB Garamond", arial;
+  font-size: 12px;
+  font-weight: 400;
+  width: 250px;
+  margin-right: 15px;
+  margin-left: 13px;
   &:focus {
     @include box-shadow(0 0 0 1000px #111 inset);
   }
