@@ -15,7 +15,7 @@ body {
 }
 
 .topspace-lg {
-  margin-top: 180px;
+  margin-top: 200px;
 }
 
 /*********************************************************************
@@ -342,6 +342,11 @@ li.navbar-right.dropdown {
   left: 125px;
   margin-bottom: 7px;
   }
+
+.no-search {
+  margin-left: 375px;
+  font-weight: 700;
+}
 
   span.cover {
     transition: all 1s;

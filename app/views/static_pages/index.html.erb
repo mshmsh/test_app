@@ -1,4 +1,5 @@
 <% provide(:title, 'Store-All Products') %>
+<% if @products.any? %>
   <div class="product-element topspace">
     	<ul class="col-sm-12"><%= render 'shared/product_info' %></ul>
   </div>
@@ -8,6 +9,12 @@
 			<%= will_paginate @products, :container => false , page_links: false%>
 		</div>
   </div>
+<% else %>
+	<div class="no-search topspace-lg">
+		  	<p>There are not any products.&nbsp;<%= link_to 'Search Again', root_path %></p>
+	</div>
+  <% end %>
+
 
 
 
